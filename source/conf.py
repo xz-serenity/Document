@@ -15,7 +15,7 @@ author = 'Sean Xiao'
 
 extensions = [
    # 'numpydoc',
-   'myst_parser',
+#    'myst_parser',
    'sphinx.ext.duration',
 ]
 
