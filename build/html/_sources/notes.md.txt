@@ -1,0 +1,1623 @@
+# 1 putty
+
+1.从本地上传到服务器：
+pscp [源文件] [Linux用户名]@[Linux服务器ip地址]:[Linux服务器目标目录]
+2.从服务器下载到本地：
+pscp [Linux用户名]@[Linux服务器ip地址]:[Linux服务器目标目录] [源文件] 
+
+
+
+# 2 Ubuntu
+
+## 2.1 ubuntu配置
+
+Ubuntu：前面的事项按照（https://blog.csdn.net/weixin_41969690/article/details/104819039）进行；
+到了root环节，先用su root将Ubuntu root化，使用 vim /etc/apt/sources.list 将镜像源替换掉（替换时，按I键变成输入模式，再点击鼠标右键替换，按esc键换回命令模式，输入 ：wq 保存退出）；
+接着用（https://blog.csdn.net/weixin_41969690/article/details/104819039）后面的更新，安装gcc与g++；g++的安装要使用清华镜像源（https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/）
+
+
+E: Unable to correct problems, you have held broken packages.  ： 把镜像源中的bionic改为focal
+
+在ubuntu上使用服务器：ssh xiaozhou@copt.amss.ac.cn
+
+**缺少zlib包：**
+
+```
+sudo apt-get install zlib1g-dev 
+sudo apt-get install zlib1g.dev 
+```
+
+**ubuntu IP地址：**
+
+```
+hostname -I | awk '{print $1}'
+```
+
+
+
+**wsl配置可视化桌面**
+
+[[Windows10\]WSL2 下让 Ubuntu20.04 安装 Gnome 桌面 - 程序知路 (chengxuzhilu.com)](https://www.chengxuzhilu.com/2395.html)
+
+[Tasksel - 在Debian和Ubuntu中轻松，快速地安装组软件 (howtoing.com)](https://www.howtoing.com/tasksel-install-group-software-lamp-mail-dns-in-debian-ubuntu/)
+
+**问题： ubuntu 参考的对象类型不支持尝试的操作。【使用法1即可】**
+
+[(5条消息) win10启动ubuntu报错 参考的对象类型不支持尝试的操作_Chivalrous Expert的博客-CSDN博客_ubuntu参考的对象类型不支持尝试的操作](https://blog.csdn.net/qq_42361881/article/details/121500438)
+
+**去掉终端提示音：**
+
+```
+sudo vim /etc/inputrc
+取消注释 set bell-style none 这一行
+重启终端
+```
+
+
+
+## 2.2 ubuntu命令
+
+windows桌面传文件给ubuntu：shift+右键 -> linux shell
+1.重命名:mv    -n <旧文件名><新文件名>；-n 表示不覆盖已经存在的文件
+2.查看ubuntu文件所在的windows位置:  explorer.exe .
+3.以下两行输出c++文件命令:
+    g++ [wenjianming] -o [xinwenjianming]
+   ./[xinwenjianming]
+4.查看文件所有的内容:  cat <文件名>
+5.查看文件的80%内容:  more <文件名> 
+
+6.scp -r ./<文件名> xiaozhou@159.226.92.26:/home/xiaozhou/<目录>: 复制ubuntu下文件到putty的                                                                                                             <目录>文件夹下
+7.scp -r xiaozhou@159.226.92.26:/home/xiaozhou/<目录>/<文件名> ./<目录>: 复制putty下文件到                                                                                                             ubuntu的<目录>文件夹下
+8.同级目录之间进行切换:  cd ../<目录>
+
+9.zip解压： unzip [文件名]
+
+​	.gz 解压 ： gzip -d [文件名]
+
+10.解压 tar.gz 文件：tar -zxvf  [文件名]
+
+​	解压 .tar 文件：tar -xvf  [文件名]
+
+11. 解压报错， 则用 gzip -d
+
+    ```
+    tar: This does not look like a tar archive
+    ```
+
+12. 参考的对象类型不支持尝试的操作
+
+    ```
+    管理员运行powershell：
+    netsh winsock reset
+    ```
+
+13. sudo 免密码：
+
+    ```
+    sudo visudo
+    # 在最后一行添加：
+    xiaozhou ALL=(ALL) NOPASSWD: ALL
+    ```
+
+14. 查看ip
+
+    ```
+    sudo apt-get install net-tools
+    ifconfig
+    ```
+
+    
+
+15. 
+
+16. 
+
+    
+
+
+
+ =========================================================
+
+# 3 vim
+
+## 3.1 vim配置
+
+scp xiaozhou@copt.amss.ac.cn:~/.vimrc ./
+scp -r xiaozhou@copt.amss.ac.cn:~/.vim/bundle ~/.vim/
+
+- 设置ctags：https://blog.csdn.net/qq_29350001/article/details/77162347
+
+自动补全括号：
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap { {}<Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+
+
+
+
+
+## 3.2 命令行
+
+打开多个文件:  vim <file1> <file2>
+查看打开多个文件的序号：:ls
+打开文件后进行切换： :b<数字>
+分屏显示文件：vim -o<数字> <file1> <file2>…
+上下分割当前打开的文件：ctrl + w s  或 :sp
+左右分割当前的文件:  ctrl + w v  或  :vs
+关闭当前的分屏: ctrl + w c 或者 ctrl + w q
+删除从光标处开始到该单词结束的所有字符，并进入插入模式：cw
+把全文中的 <1> 替换成 <2>:  :%s/<1>/<2>/g
+将光标位置开始的3个字母改变其大小写:  3~
+折叠代码：zf[行序号]G
+打开所有折叠的代码：zR
+
+z回车 将光标所在行移动到屏幕顶端
+z. 将光标所在行移动到屏幕中间
+z- 将光标所在行移动到屏幕低端
+
+两文件进行切换：ctrl + 6	
+下一个文件： :bn
+上一个文件： :bp
+两窗口进行切换：ctrl + w + <上下左右方向键>
+tab切换：gt 或者 ，+ 数字
+关闭当前tab：:tabc
+
+%  : 跳转到配对的括号
+[[   : 跳转到当前或者上一代码块（函数定义、类定义）开头
+][ : 跳转到当前代码块结尾 ]]   : 跳转到下一代码块开头
+[/   : 跳转到注释开头 （对/* */有效）
+]/   : 跳转到注释结尾（对/* */有效）
+gD : 跳转到当前文件内标识符首次出现的位置，可用于跳转到变量的定义处
+gd  : 跳转到当前函数内标识符首次出现的位置，可用于跳转到局部变量的定义处
+''   : 跳转到光标上次所在位置，两个'
+
+
+
+
+
+## 3.3 操作键
+
+### 3.3.1 命令模式
+
+h 或 向左箭头键(←):   光标向左移动一个字符
+j 或 向下箭头键(↓):	光标向下移动一个字符
+k 或 向上箭头键(↑):	光标向上移动一个字符
+l 或 向右箭头键(→):	光标向右移动一个字符
+
+[Ctrl] + [f] 	屏幕『向下』移动一页，相当于 [Page Down]按键 (常用)
+[Ctrl] + [b] 	屏幕『向上』移动一页，相当于 [Page Up] 按键 (常用)
+[Ctrl] + [d]	                屏幕『向下』移动半页
+[Ctrl] + [u]	                屏幕『向上』移动半页
++	                光标移动到非空格符的下一行
+-	                光标移动到非空格符的上一行
+	n<space>	                n 表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n 个                                字符。例如 20<space> 则光标会向后面移动 20 个字符距离。
+	0 或功能键[Home]	这是数字『 0 』：移动到这一行的最前面字符处 (常用)
+	$ 或功能键[End]	移动到这一行的最后面字符处(常用)
+
+H	                光标移动到这个屏幕的最上方那一行的第一个字符
+M	                光标移动到这个屏幕的中央那一行的第一个字符
+L	                光标移动到这个屏幕的最下方那一行的第一个字符
+G	                移动到这个档案的最后一行(常用)
+nG	                n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行
+gg	                移动到这个档案的第一行，相当于 1G 啊！ (常用)
+n<Enter>	                n  为数字。光标向下移动 n 行(常用)
+
+/word	                向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串                                ，就输入 /vbird 即可！ (常用)
+?word	                向光标之上寻找一个字符串名称为 word 的字符串。
+n	                这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行                                 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为                                 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为                                 vbird 的字符串！
+N	                这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird                                 后，按下 N 则表示『向上』搜寻 vbird 。
+
+:n1,n2s/word1/word2/g	n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：
+『:100,200s/vbird/VBIRD/g』。(常用)
+:1,$s/word1/word2/g 或 :%s/word1/word2/g	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)
+:1,$s/word1/word2/gc 或 :%s/word1/word2/gc	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)
+
+x, X	在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)
+nx	n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。
+dd	删除游标所在的那一整行(常用)
+ndd	n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)
+d1G	删除光标所在到第一行的所有数据
+dG	删除光标所在到最后一行的所有数据
+d$	删除游标所在处，到该行的最后一个字符
+d0	那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符
+yy	复制游标所在的那一行(常用)
+nyy	n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)
+y1G	复制游标所在行到第一行的所有数据
+yG	复制游标所在行到最后一行的所有数据
+y0	复制光标所在的那个字符到该行行首的所有数据
+y$	复制光标所在的那个字符到该行行尾的所有数据
+p, P	p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)
+J	将光标所在行与下一行的数据结合成同一行
+c	重复删除多个数据，例如向下删除 10 行，[ 10cj ]
+u	复原前一个动作。(常用)
+[Ctrl]+r	重做上一个动作。(常用)
+这个 u 与 [Ctrl]+r 是很常用的指令！一个是复原，另一个则是重做一次～ 利用这两个功能按键，你的编辑，嘿嘿！很快乐的啦！
+.	不要怀疑！这就是小数点！意思是重复前一个动作的意思。 如果你想要重复删除、重复贴上等等动作，按下小数点『.』就好了！ (常用)
+
+ma  在该行打上标记a
+
+'a 移动到标记a处
+
+'A 用大写打标记不会因为退出而更改
+
+'' 两次单引号，跳转到光标上次所在位置
+
+ctrl + o ：跳转到光标早些时候的位置 
+
+n== ：处理代码不对齐不缩进的情况
+
+esc + q : 处理recording @w
+
+
+
+### 3.3.2 insert模式
+
+i, I	进入输入模式(Insert mode)：
+i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』。 (常用)
+a, A	进入输入模式(Insert mode)：
+a 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』。(常用)
+o, O	进入输入模式(Insert mode)：
+这是英文字母 o 的大小写。o 为在目前光标所在的下一行处输入新的一行； O 为在目前光标所在的上一行处输入新的一行！(常用)
+r, R	进入取代模式(Replace mode)：
+r 只会取代光标所在的那一个字符一次；R会一直取代光标所在的文字，直到按下 ESC 为止；(常用)
+上面这些按键中，在 vi 画面的左下角处会出现『--INSERT--』或『--REPLACE--』的字样。 由名称就知道该动作了吧！！特别注意的是，我们上面也提过了，你想要在档案里面输入字符时， 一定要在左下角处看到 INSERT 或 REPLACE 才能输入喔！
+[Esc]	退出编辑模式，回到一般模式中(常用)
+
+
+
+
+
+### 3.3.3 底行模式
+
+:w	将编辑的数据写入硬盘档案中(常用)
+:w!	若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！
+:q	离开 vi (常用)
+:q!	若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。
+注意一下啊，那个惊叹号 (!) 在 vi 当中，常常具有『强制』的意思～
+:wq	储存后离开，若为 :wq! 则为强制储存后离开 (常用)
+ZZ	这是大写的 Z 喔！如果修改过，保存当前文件，然后退出！效果等同于(保存并退出)
+ZQ	不保存，强制退出。效果等同于 :q!。
+:w [filename]	将编辑的数据储存成另一个档案（类似另存新档）
+:r [filename]	在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面
+:n1,n2 w [filename]	将 n1 到 n2 的内容储存成 filename 这个档案。
+:! command	暂时离开 vi 到指令行模式下执行 command 的显示结果！例如
+『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息
+
+
+
+
+
+=========================================================
+
+# 4 git 
+
+利用（https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424）
+
+
+
+## 4.1 git安装
+
+ 1.安装git  sudo apt-get install git
+ 2.创建版本库：选择合适的地方，创建目录mkdir learngit; cd learngit; pwd；通过git init把这个目录变成可管理的仓库
+ 3.创建文件，利用git add 将文件放入暂存区，必须是有新内容才是add
+ 4.git commit -am [注释] 提交至仓库
+ 5.建立与github的连接：在git的主目录下输入 ssh-keygen -t rsa -C "邮箱"；一直回车；
+
+6.ssh-keygen -t rsa  生成公钥
+
+7.cat ~/.ssh/id_rsa.pub 查看公钥
+
+8.解决ssh: connect to host github.com port 22: Connection refused
+
+[(5条消息) Git测试报错ssh: connect to host gitub.com port 22: Connection refused_神芷迦蓝寺-CSDN博客](https://blog.csdn.net/mochou111/article/details/96475522)
+
+
+
+
+
+## 4.2 git命令
+
+git分支：
+查看分支: git branch
+创建分支: git branch <name> 
+切换分支: git checkout <name> 或 git switch <name>
+创建+切换分支: git checkout -b <name> 或 git switch -c <name>
+合并某分支到当前分支: git merge --no-ff  <name>
+删除分支: git branch -d <name>
+分支推送: git push origin <分支名>
+
+查看修改的内容：git diff
+
+标签(与commit挂钩）
+创建标签: git tag <name>
+删除标签: git tag -d <name>
+推送标签至远程: git push origin <name>
+颜色:  git config --global color.ui true
+
+克隆远程仓库到新文件夹：git clone  <repository> <new directory>
+
+更改命令名: git config --global alias.<co checkout>
+
+不跟踪文件：git rm -r --cached <filename>
+
+罗列不跟踪文件夹：git rm -r -n --cached <filename>
+
+不跟踪文件夹：git rm -r --cached <filename>
+
+版本回退: git reset --hard <id>
+
+git clone远程仓库时重命名本地文件夹：git clone <http:>  <dirname>
+
+git 将一个分支的文件夹移动到当前分支：git checkout 来源分支 -- 文件路径
+
+git 比较两个分支的某个文件异同：git diff branch1 branch2 <path-to-file>
+
+git stash 回退：
+
+```
+git stash list
+git stash apply stash@{id}
+```
+
+新仓库：
+
+```
+git init                 #取消 git init： rm -rf .git           
+git add <filename>
+git commit -am 'xz'
+git remote add origin <repository address>
+git push -u origin main/master
+
+# fatal: 'main' does not appear to be a git repository
+git remote -v #查看远程信息
+git remote remove main 
+git remote add origin <repository address>
+git push -u origin main/master
+```
+
+cmipwork目录下git：
+
+```
+git branch
+git fetch origin master:master1103
+git checkout master1103
+git diff
+git commit -am 'comment'
+git checkout master1103
+make clean
+make -j
+make test
+git checkout xz210710
+git pull origin master
+```
+
+服务器修改代码后，在集群跑测试集时，别用scp，用git：
+
+```
+git fetch origin parallel_columns:parallel_columns  
+git diff
+git checkout parallel_columns
+make clean
+make -j
+./bin/cmip -f check/instances/collection/decomp1.mps.gz
+```
+
+
+
+## 4.3 git 问题
+
+1. gitee ： 
+
+   ```
+   Cloning into 'mcfdr'...
+   [session-21415b99] Auth error: 404 not found!
+   
+   #解决： 检查 git clone 后面的链接是否有错
+   ```
+
+   
+
+
+
+============================================
+
+# 5 zimpl
+
+命令全部在 zimpl.pdf 使用手册中
+
+1.vim <文件名>.zpl : 新建或打开zpl文件
+2.zimpl <文件名>.zpl :  转换为lp文件
+3.zimpl <文件名>.zpl -t mps : 转为mps格式
+4.scip -f <文件名>.zpl / lp 或 cplex -f <文件名>.lp : 求解器求解
+
+⑵
+1.字符串用“”标注起来
+2.数组用<>，如<1,2,"x">
+3.约束条件命令：subto name: expr sense term sense expr； 其中 expr 表示 表达式，sense是<=,>=或==的一种，term 为目标.。  用 and 连接两个不同的约束条件
+
+
+
+====================================================
+
+# 6 shell
+
+```shell
+chmod +x ./<文件名>
+./<文件名>
+```
+
+其它命令可以查看Microsoft edge的收藏
+
+统计当前目录下文件数量：
+
+```shell
+ls -l |grep "^-" |wc -l
+```
+
+
+
+分割字符串
+
+[(5条消息) 【shell】shell字符串分割|文件分割|剪切|截取_bandaoyu的博客-CSDN博客_shell分割字符串读取](https://blog.csdn.net/bandaoyu/article/details/120659630)
+
+定义变量时，双引号里需要包括双引号，则可以使用转义字符 \
+
+```
+var="a \"b\" c"
+```
+
+Bad for loop variable
+
+```
+改用 bash 执行
+```
+
+
+
+
+
+
+
+判断的时候，if 与 [ 必须隔开
+
+```
+if [command]
+then
+...
+elif []
+then
+...
+else
+fi
+```
+
+
+
+(1)
+if结构：
+
+```shell
+1.if [ condition ];then
+		command
+		command
+fi
+
+2.if test 条件;then
+	命令
+fi
+
+3.if [[ 条件 ]];then
+	命令
+fi
+
+4.[ 条件 ] && command
+
+
+if else结构
+if [ condition ];then
+		command1
+	else
+		command2
+fi
+
+[ 条件 ] && command1 || command2
+
+
+if…elif…else结构
+if [ condition1 ];then
+		command1  	结束
+	elif [ condition2 ];then
+		command2   	结束
+	else
+		command3
+fi
+
+
+```
+
+
+
+for 结构
+
+```shell
+for ((i=1;i<10;i++))
+do
+...
+done
+
+
+```
+
+
+
+==============================================
+
+
+
+# 7 awk
+
+- 内置变量：
+
+FILENAME：文件名
+
+NF：列数
+
+NR：行数
+
+-F：设置分隔符
+
+- 使用变量："'${变量名}'"
+
+- if语句
+
+  ```awk
+  if(condition)
+  
+  {
+  
+   command;
+  
+   command;
+  
+   …
+  
+  }
+  ```
+
+  
+
+awk字符串转数字
+
+```
+awk 'BEGIN{a="100";b="10test10";print (a+b+0);}'	
+> 110
+```
+
+只需要将变量通过”+”连接运算。自动强制将字符串转为整型。非数字变成0，发现第一个非数字字符，后面自动忽略。
+
+awk 使用外部变量：
+
+```
+awk -v typenode="name" -f read-dnndp.awk networks/nsf2.nd
+```
+
+集群检查collection输出：
+
+```
+awk '/column/{print FILENAME}' *
+```
+
+分隔指定字符串
+
+```
+echo "8_sf.out" |awk -F '.' '{split($1,a,"_"); print a[1],a[2]}'
+```
+
+最大值，平均值
+
+```
+awk 'BEGIN{ max = 0} {if ($1 > max) max = $1;} END{printf max}'
+```
+
+字符串拼接
+
+```awk
+"a" "b" "c" 
+用空格隔开，awk自动拼接字符串，输出为 “abc”
+```
+
+处理多个文件：
+
+```
+1. ARGIND # 当前被处理参数标志
+
+awk 'ARGIND==1{...}ARGIND==2{...}ARGIND==3{...}... ' file1 file2 file3 ...
+
+
+2. ARGV # 命令行参数数组
+
+awk 'FILENAME==ARGV[1]{...}FILENAME==ARGV[2]{...}FILENAME==ARGV[3]{...}...' file1 file2 file3 ...
+
+
+```
+
+
+
+=============================================
+
+
+
+# 8 CMIP
+
+## 服务器
+
+gitlab 账号密码
+
+账号：xiaozhou1
+
+密码：xiao@2023
+
+1. scp -r xiaozhou@159.226.92.26:/home/xiaozhou/
+   
+1. 服务器密码: xz@2021
+   
+1. make clean
+   make -j
+   make test
+
+   vim check/results/default/testeasy.cmip.1threads.7200s.out
+   
+1. debugsol
+
+   ./bin/cmip_debug -f check/instances/testeasy/p0548.mps -s check/solution sol.sol
+
+1. 检查内存泄漏
+
+- ./val ./bin/cmip -f check/instances/testeasy/p0548.mps     具体到一个例子
+
+- 带debug
+
+  ```linux
+  make ver=debug -j
+  
+  ./val ./bin/cmip_debug -f check/instances/testeasy/p0548.mps
+  ```
+
+  vim ./valgrind_report.log
+
+- 修改bool变量： 
+
+
+```c++
+env->GetBoolParam(CMIPBoolParam_Presolve_<>_IsExecute) == false) 
+```
+
+ 并在前面加上 CMIPEnvPtr en
+
+
+
+CMIP用cplex测试：
+
+```
+在 check/bin 下执行 ln -s path/to/cplex
+
+scripts/cplex_run 为对应的提交设置文件
+```
+
+
+
+   4.更新ctags：ctags -R
+
+   5.g++或make编译不成功：
+
+​			g++: fatal error: Killed signal terminated program cc1plus
+​			compilation terminated.
+
+```markdown
+**法1：**
+# 先删除原先分区
+sudo swapoff /var/cache/swap/swap0
+sudo rm /var/cache/swap/swap0
+# 设置分区的大小
+# bs=64M是块大小，count=64是块数量，所以swap空间大小是bs*count=4096MB=4GB
+sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64
+# 设置该目录权限
+sudo chmod 0600 /var/cache/swap/swap0
+# 创建SWAP文件
+sudo mkswap /var/cache/swap/swap0
+# 激活SWAP文件
+sudo swapon /var/cache/swap/swap0
+# 查看SWAP信息是否正确
+sudo swapon -s
+
+**法2**
+sudo dd if=/dev/zero of=/swapfile bs=1G count=6
+# count的大小就是增加的swap空间的大小，1G是块大小为1G，所以空间大小是bs*count=6G
+sudo mkswap /swapfile
+# 把刚才空间格式化成swap格式
+su
+chmod 0600 /swapfile  
+sudo swapon /swapfile
+# 使用刚才创建的swap空间
+
+```
+
+
+
+
+
+## 大集群
+
+从集群复制文件：
+
+scp -P 10190 ./<> suzhaogang@10.4.3.17:/share/home/suzhaogang/xiaozhou/
+
+大集群复制文件到服务器：scp -r <> xiaozhou@159.226.92.26:~/cmipwork
+
+[密码：**xz@2021**]
+
+大集群复制文件到小集群：scp -r <> xiaozhou@10.1.20.53:~/cmipwork
+
+[密码：**xz2022**]
+
+大集群：	IP为：10.4.3.17
+
+```bash
+suzhaogang
+SuZhaoGang@2021
+
+ythu
+yutinghu@1578
+
+diaoruoyu
+LyTo&Mjy5J
+
+zhangyuhang
+1r0i@1maQV
+```
+
+
+
+查看进程状态
+
+ps -aux | grep "suzhaogang"
+
+杀死所有进程
+
+ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+
+​				
+
+![image-20220410140238561](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\image-20220410140238561.png)
+
+
+
+如果出现./bin/cmip: error while loading shared libraries: libClp.so.1: cannot open shared object file: No such file or directory错误：
+
+```
+cp -r cmipwork/interface xz/cmipwork/
+```
+
+
+
+测试库测试：
+make testcluster TEST=测试库 TIME=7200 OUTFILE=文件夹 SETTING=控制方法的文件
+(make ver=opt testcluster TEST=collection TIME=300 OUTFILE=LWNoTwoCols SETTING=TwoRowsNoTowcols.set)
+
+单个例子测试：	./bin/cmip -f check/instances/testeasy/misc03.mps (-t 可以用来生成预处理后的文件)
+单个例子带控制方法: ./bin/cmip -f check/instances/testeasy/atm_5_10_1.mps -set NoTwoRow.set
+Example:NoTwoRow.set 中控制方法使用:
+presolve/isOpen_DetectReduntancy  0
+presolve/isOpen_KnapsackScale  0
+CMIP中awk使用: awk -f result_compare.awk ./lv1/time600.res ./lv2/time600.res 
+自己写awk: ./withdrawFP.awk penalty/penalty.out 
+
+
+
+```
+./bin/cmip -f check/instances/testeasy/p0548.mps
+./bin/cmip -f ~/cmipwork/check/instances/collection/
+```
+
+
+
+集群测试：
+
+```
+make ver=opt testcluster TEST=time60 TIME=100 OUTFILE=gubtime60-sec
+
+make ver=release testcluster TEST=# OUTFILE=# SETTING=#.set TIME=7200 SEEDFILE=default MPICORE=360
+
+```
+
+CPLEX 测试提交(在cmipwork/check目录下提交)
+
+```
+make ver=release testcluster SOLVER=cplex TEST=gubbenchmark TIME=7200 SETTING=offgub.prm OUTFILE=cplexoffgub SEEDFILE=default MPICORE=108
+
+bsub -J rocI-4-11 -q batch -R "span[ptile=2]" -n 2 -e cplexgubtest/rocI-4-11.mps.gz.err -o cplexgubtest/rocI-4-11.mps.gz.out "cplex -c read /share/data/collection/rocI-4-11.mps.gz read cplex.prm opt "
+```
+
+SCIP 测试提交(在cmipwork/check目录下提交)	
+
+```
+在 check/bin 下执行 ln -s ~/scipoptsuite-8.0.0/bin/scip 
+在 cmipwork/check 下
+make ver=release testcluster SOLVER=scip BIN=scip TEST= SETTING=.set OUTFILE= MPICORE=360 TIME=7200 SEEDFILE=default
+```
+
+跑遍collection测试集：
+
+```
+make ver=opt testcluster TEST=collection TIME=600 OUTFILE=parallelcols
+make ver=opt testcluster TEST=mergevar TIME=7200 OUTFILE=onParallelCol
+make ver=opt testcluster TEST=mergevar TIME=7200 OUTFILE=offParallelCol SETTING=ParallelCols.set
+```
+
+在results目录下执行
+
+```
+awk -f parse_cmip_check.awk OUTFILE/*.out
+```
+
+即可发现预处理、启发式、割平面耗时的算例
+
+结束进程：
+
+```
+./killall
+bkill <JobID>
+```
+
+检查容量：
+
+```
+du -sh *
+```
+
+后台运行
+
+```
+./run.sh &
+```
+
+删除core
+
+```
+check 目录下：
+nohup ./rmcore.sh &
+```
+
+复制服务器的预处理文件：
+
+```
+scp -r xiaozhou@159.226.92.26:/home/xiaozhou/cmipwork/src/cmip/CMIPPresolve.cpp ~/xz/cmipwork/src/cmip
+```
+
+检查解得结果：
+
+```
+./check/checker/bin/solchecker ~/cmipwork/check/instances/collection/app2-1.mps.gz sol.sol
+```
+
+debug检查：
+
+```
+ ./val ./bin/cmip_debug -f ~/cmipwork/check/instances/collection/
+```
+
+比较开关平行列的结果：
+
+```
+awk -f result_compare.awk ./onParallelCol/mergevar.cmip.1threads.7200s.res ./offParallelCol/mergevar.cmip.1threads.7200s.res
+
+ awk -f result_compare.awk ./benchmark-ongub/benchmark_cmip.cmip.1threads.7200s.res ./benchmark-offgub/benchmark_cmip.cmip.1threads.7200s.res
+
+```
+
+替换成 TEST 可读形式：
+
+```
+:%s/collection\./..\/..\/..\/cmipwork\/check\/instances\/collection\//g
+:%s/0\.cmip\.1threads\.600s\.out/mps\.gz/g
+```
+
+集群检查 collection 输出：
+
+```shell
+awk '/ParallelColumns/{print FILENAME}' * > effectConsPara
+awk '/M_/{print FILENAME}' * > effectMergevar
+awk '/DiffObj/{print FILENAME}' * > effectDiffobj
+awk '/Parallel But Not Merge/{print FILENAME}' * > effectNotmerge
+```
+
+去掉重复的行
+
+```shell
+awk '!a[$0]++' effectConsPara > ConsPara
+awk '!a[$0]++' effectMergevar > Mergevar
+awk '!a[$0]++' effectDiffobj > Diffobj
+awk '!a[$0]++' effectNotmerge > Notmerge
+```
+
+各部分awk位于：
+
+```
+cmipwork/check/scripts
+```
+
+求最大值
+
+```
+awk 'BEGIN{ max = 0} {if ($1 > max) max = $1;} END{printf max}'
+```
+
+统计当前目录下文件数量：
+
+```shell
+ls -l |grep "^-" |wc -l
+```
+
+统计文件中重复字符串出现的次数：
+
+```
+grep -o '字符串' file |wc -l
+```
+
+
+
+```
+awk 'BEGIN{sign = 0;} {/parallel column/ sign = 1;} END{if(sign = 1) print FILENAME;}' * > xzeffect
+```
+
+
+
+查看进程: bjobs
+
+
+
+cplex
+
+```
+make testcluster SOLVER=cplex TEST=30-20-r-h TIME=60 OUTFILE=SSNDP_cplex
+make testcluster SOLVER=cplex TEST=30-20-r-h TIME=3600 OUTFILE=SSNDP_cplex
+```
+
+
+
+## 小集群
+
+账号：xiaozhou
+
+密码：xz2022
+
+从集群复制文件：rsync -r xiaozhou@10.1.20.53:
+
+IP为：10.1.20.53
+外网请使用vpn，详细如下：
+  vpn：https://159.226.47.20/
+
+```
+team_daiyuhong
+dyh@lsec.0621
+
+lvwei
+h#Z79DnjdC
+
+yuchengyang
+$8yMgyQ13x
+
+liuyachen
+rcTWd9^Se1
+```
+
+查看进程状态
+
+ps -aux | grep "xiao"
+
+杀死所有进程
+
+ps -aux | grep "xiao" | awk '$1=="xiaozhou" {print $2}' | xargs kill -9
+
+**集群配置**:
+
+x86_64 架构
+
+具有 52 个 CPU 核心
+
+每个核心有 1 个线程
+
+Intel Xeon Gold 6230R 处理器
+
+主频为 2.10GHz
+
+内存为 250 G
+
+=========================================
+
+# 9 CPLEX
+
+```
+cplex -c read inst5.lp opt
+cplex -c read inst5.lp opt wr inst5.sol
+cplex -c read inst5.lp set mip tol mipgap 0 opt wr inst5.sol
+cplex -c read inst5.lp set mip tol mipgap 0 set timelim 3 opt
+```
+
+
+
+Ubuntu安装cplex：从集群或服务器 scp 压缩包
+
+编译：
+
+```
+gcc -c -m64 -fPIC  -I/opt/ibm/ILOG/CPLEX_Studio201/cplex/include ./admipex5.c -o admipex5.o
+
+gcc -m64 -fPIC  -I/opt/ibm/ILOG/CPLEX_Studio201/cplex/include -L/opt/ibm/ILOG/CPLEX_Studio201/cplex/lib/x86-64_linux/static_pic  -o admipex5 admipex5.o -lcplex -lm -lpthread -ldl
+```
+
+
+
+设置参数：
+
+```
+https://www.ibm.com/docs/en/icos/12.10.0?topic=s-cpxxsetintparam-cpxsetintparam
+```
+
+关预处理：
+
+```julia
+https://www.ibm.com/docs/en/icos/12.7.1.0?topic=parameters-presolve-switch
+https://www.ibm.com/docs/en/icos/12.7.1.0?topic=parameters-primal-dual-reduction-type
+https://www.ibm.com/docs/en/icos/12.7.1.0?topic=parameters-relaxed-lp-presolve-switch
+```
+
+
+
+==========================================
+
+# 10 polymake
+
+读顶点（第一项规定必须为1）
+
+```
+open(INPUT,"<","Fea.poly");$matrix=new Matrix<Rational>(<INPUT>); print $matrix;$p=new Polytope<Rational>(POINTS=>$matrix);print_constraints($p);print($p->FACETS);
+```
+
+读所有约束：
+
+```
+open(INPUT1,"<","Ine.txt");open(INPUT2,"<","Aeq.txt");$Ine=new Matrix<Rational>(<INPUT1>);$Aeq=new Matrix<Rational>(<INPUT2>); print $Ine;print $Aeq;$p=new Polytope<Rational>(INEQUALITIES=>$Ine,EQUATIONS=>$Aeq);
+```
+
+读lp文件
+
+```
+$f=lp2poly('conv.lp');$p = new Polytope<Rational>($f);$s=new Polytope(POINTS=>$p->LATTICE_POINTS, COORDINATE_LABELS=>$p->COORDINATE_LABELS);print_constraints($s);
+```
+
+求无界多面体（注意$pin->DIM+**1** 维数, 要等于变量数+1）
+
+```
+$f = lp2poly('example.lp');$pin = new Polytope<Rational>($f);$rays = $pin->VERTICES->minor($pin->FAR_FACE, All);$zero = unit_vector<Rational>($pin->DIM + 1, 0);$B = new Polytope<Rational>(POINTS=>$zero);
+
+foreach my $r (@$rays) { $M = new Matrix<Rational>(primitive($r));$M->[0]->[0] = 1;$M = $M / $zero;$ptemp = new Polytope<Rational>(POINTS=>$M);$B = minkowski_sum($B, $ptemp); }
+
+$Qpoints = $pin->VERTICES->minor($pin->BOUNDED_VERTICES, All);$Q = new Polytope<Rational>(POINTS=>$Qpoints);$p = minkowski_sum($Q, $B);
+
+$latticemat = new Matrix<Rational>($p->LATTICE_POINTS);$newpoints = new Matrix<Rational>($latticemat / $rays);$q = new Polytope(POINTS=>$newpoints, COORDINATE_LABELS=>$pin->COORDINATE_LABELS);print_constraints($q);
+```
+
+读取文件
+
+```
+load_data("facet.txt");
+```
+
+利用 julia 可以使用文件polymake
+
+```
+testPolymake.jl
+```
+
+=====================================
+
+# 11 MATLAB
+
+从ubuntu 与 matlab 之间拷贝文件：
+
+```
+scp -r ./ /home/xiaozhou/../../../mnt/e/matlab/bin/allfiles/        传到matlab
+scp -r /home/xiaozhou/../../../mnt/e/matlab/bin/allfiles/<> ./		传到ubuntu
+```
+
+整体缩进：
+
+```
+ctrl + i
+```
+
+命令行：
+
+```
+sum(sum(Aeq*X'~=0))
+sum(sum(A*X'>1))
+```
+
+只保留矩阵第一列的数据：FA（:,1）=[];
+
+去掉矩阵中的全0行:  a(all(a==0,2),:) = [];
+
+去掉矩阵中的全0列:  a(:,all(a==0,1)) = [];
+
+找出矩阵的全零行：find(all(A==0,2))
+
+从数组中随机挑选n个数：A(randperm(numel(A),5))
+
+======================================
+
+# 12 excel
+
+按照已知的顺序排列：=VLOOKUP(D1,A:B,2,0)
+
+
+
+
+
+
+
+
+
+
+
+=============================
+
+# 13 linux
+
+在原文件后面新添内容:
+
+```
+./*** >> file
+```
+
+把目录下的所有文件放入同一个文件内：
+
+```
+ls * > file
+
+```
+
+nohup命令后台执行shell脚本
+
+```
+nohup ./shell.sh &
+```
+
+查找文件：[linux find 命令查找文件和文件夹 - jiftle - 博客园 (cnblogs.com)](https://www.cnblogs.com/jiftle/p/9707518.html)
+
+```
+find -name 'filename'
+locate filename
+
+查找文件夹：
+find . -type d -iname "..."
+```
+
+
+
+
+
+
+
+
+
+==============================
+
+# 14 Latex
+
+上下标离字母太近或太远就使用 \;   比如
+
+```
+f^{\;k}_e
+```
+
+![image-20211126192656565](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\image-20211126192656565.png)
+
+
+
+
+
+
+
+==============================
+
+# 15 VS code
+
+1. vscode + latex + 语法错误检查：**TeX 插件**
+2. ubuntu 远程不能打开，是ubuntu本身的错，power shell 输入 netsh winsock reset
+
+![1659843893835](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\1659843893835.png)
+
+
+
+3. 解决vscode 已配置ssh 但仍需输密码：
+
+   cd .ssh
+   chmod 700 ../
+   chmod 700 .
+   chmod 600 authorized_keys
+
+   chmod g-w authorized_keys
+
+   [(11条消息) SSH配置公钥后仍需要输入密码问题解析_ghimi的博客-CSDN博客_为什么配置了ssh还要输入密码](https://blog.csdn.net/qq_19922839/article/details/117488663)
+
+   [(11条消息) SSH免密登录配置后还是需要密码的问题解决_L_学无止境的博客-CSDN博客_ssh免密设置后仍然需要密码](https://blog.csdn.net/u011489186/article/details/111469786)
+
+   
+
+
+
+
+
+
+
+# 16 Gurobi
+
+grbgetkey 80b3d968-a5e1-11ec-a5de-0242c0a81004
+
+grbgetkey c907a0c0-b6f6-11ec-95a2-0242ac120004             expire at 22-06-06
+
+linux 安装 gurobi：[Linux下安装Gurobi - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/79524375)
+
+问题：LoadError: Gurobi Error 10009: No Gurobi license found
+
+```
+gurobi 官网申请 license
+#官网-> Academic-> request a license
+在 bin 目录下执行 获取的license
+
+```
+
+
+
+```julia
+#22-12-09
+#问题:
+LoadError: Gurobi Error 10009: HostID mismatch (licensed to 5d3d09d7, hostid is 5dcc7d5c)
+#原因：Licence Manage hostid (lmhostid)
+
+#命令行执行
+ifconfig
+# eth0 中找到 ether, 核对后面的地址与“5dcc7d5c”是否一致
+#若一致，则
+#更改mac地址 
+sudo ip link set dev eth0 down
+sudo ip link set dev eth0 address 00:15:5d:3d:09:d7 # or any address, which will be fixed. 保持与license中的id一致
+sudo ip link set dev eth0 up
+#参考：https://github.com/microsoft/WSL/issues/5352
+```
+
+
+
+Gurobi 需要生成新的 libgurobi_c++.a 才能有完整的接口功能（应该为 API（Application Programming Interface）【应用程序接口】重新编译c++库，并替换旧的库，以解决任何 ABI 【应用程序二进制接口】(Application Binary Interface) 不兼容的问题），步骤如下：
+
+```
+(i)  cd gurobi950/linux64/src/build
+(ii) make
+(iii) cp libgurobi_c++.a ../../lib/
+```
+
+
+
+
+
+# 17 SCIP
+
+SCIP添加新求解问题目录：
+
+```
+在目录 ~/SCIP/scipoptsuite-8.0.0/scip/examples/ 下新建求解问题目录：如ABC
+将 CMakeList.txt Makefile src 放到目录ABC下
+在 ~/SCIP/scipoptsuite-8.0.0/scip/examples/ 的 CMakeList.txt 中添加ABC
+转到目录 ~/SCIP/scipoptsuite-8.0.0/build 后执行 cmake .. 和 make -j
+在 ~/SCIP/scipoptsuite-8.0.0/build/scip/examples/ 下会自动出现目录ABC
+```
+
+SCIP添加debug目录 :
+
+```markdown
+cd ~/SCIP/scipoptsuite-8.0.0/
+scp -r ./build/ ./debug
+cd debug
+# (optional) cmake . -DREADLINE=off -DIPOPT=off -DZIMPL=off -DGCG=off -DCMAKE_BUILD_TYPE=Debug -DNOBLKBUFMEM=off -DDEBUGSOL=on
+cmake -DNOBLKBUFMEM=off ..
+```
+
+SCIP进入debug模式：
+
+```
+cmake -DCMAKE_BUILD_TYPE=Debug .. -DNOBLKBUFMEM=off
+```
+
+进入release模式:
+
+```markdown
+cmake -DCMAKE_BUILD_TYPE=Release .
+
+# (optional) cmake . -DREADLINE=off -DIPOPT=off -DZIMPL=off -DGCG=off -DCMAKE_BUILD_TYPE=Release -DNOBLKBUFMEM=off -DDEBUGSOL=off
+```
+
+SCIP debug solution 步骤:
+
+```
+1 根据生成的执行文件进入交互模式 -> read -> 传入数据文件路径 -> opt -> write -> sol -> right.sol (正确解文件)
+    2 debug 模式下: cmake .. -DDEBUGSOL=on (off)  
+3 打开错误问题的设置(如: propagator等)
+4 在对应的目录下 make -j
+5 根据生成的执行文件进入交互模式 -> set -> misc -> debugsol -> right.sol -> read -> 传入数据文件路径 -> opt (后续会显示冲突) 
+```
+
+SCIP 将文件移至debug下：
+
+```
+scp -r <> /home/xiaozhou/SCIP/scipoptsuite-8.0.0/debug/scip/examples/unsplit/
+mv <> /home/xiaozhou/SCIP/scipoptsuite-8.0.0/debug/scip/examples/unsplit/
+```
+
+SCIP 输出预处理后的文件步骤：
+进入交互模式  ->  read (输入数据文件)  -> presolve -> write -> transproblem (文件名)
+
+
+
+**SCIP 参数：**
+
+设置关闭割平面：
+
+```
+关掉所有：set/separating/emphasis off 
+
+set -> separating -> <cutname> -> freq : -1
+#例如关闭背包割：set -> separating -> knapsackcover -> freq : -1
+#设置完成提示： separating/knapsackcover/freq = -1
+```
+
+设置只求到根节点：
+
+```
+set -> limits -> totalnodes : 1
+#设置完成提示： limits/totalnodes = 1
+```
+
+将设置的参数写入文件：
+
+```
+set -> diffsave -> <filename>.set
+```
+
+关闭预处理：
+
+```
+set -> presolving -> maxrounds : 0
+```
+
+
+
+安装流程：[SCIP Doxygen Documentation: INSTALL.md Source File (scipopt.org)](https://www.scipopt.org/doc-7.0.3/html/INSTALL_8md_source.php)
+
+```julia
+> tar xvzf scipoptsuite-8.0.0.tgz
+> cd scipoptsuite-8.0.0
+> mkdir build 
+> cd build
+> cmake ..
+# 报错：Could NOT find Readline (missing: Readline_INCLUDE_DIR Readline_LIBRARY)
+# 解决：sudo apt-get install libreadline-dev
+
+# 报错：Could NOT find IPOPT (missing: IPOPT_LIBRARIES) (Required is at least version "3.12.0")
+# 解决：https://github.com/coin-or/Ipopt
+#	   https://coin-or.github.io/Ipopt/INSTALL.html
+
+# 报错：Provided package HSL is not working or does not contain MA27
+# 解决：需要下载 HSL 包,见下图
+> make 
+> make check
+# 报错：Exception message: libhsl.so: cannot open shared object file: No such file or directory
+# 解决：https://blog.csdn.net/weixin_42268975/article/details/107708414
+#      以及见下图
+> make install
+```
+
+
+
+![image-20220424153422612](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\image-20220424153422612.png)
+
+
+
+问题报错：
+
+```markdown
+Assertion `chkmem->lazyfreesize == 0' failed.
+# 将 SCIPallocBlockMemory 换成 SCIPallocBuffer
+
+#不要在debug检查内存时打开debugsol 
+
+assert (getNusedMemory->Buffer == 0) failed
+# Buffer 改为 BlockMemory
+
+corrupted size vs. prev_size 
+realloc(): invalid next size:
+malloc(): memory corruption
+malloc(): smallbin double linked list corrupted
+segment fault
+free(): corrupted unsorted chunks
+malloc(): memory corruption (fast)
+# 以上错误大概率由<数组越界>引起
+# 参考链接：https://rushanshi.blog.csdn.net/article/details/122479455
+
+```
+
+
+
+编译cmake报错：
+
+![1658911307908](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\1658911307908.png)
+
+```markdown
+#链接的g++版本不对，命令行设置 export CXX=/usr/bin/g++ 或 export CXX=/usr/local/bin/g++
+参考链接: https://blog.csdn.net/fpcc/article/details/102664881
+```
+
+
+
+warning: constraint handler <...> cannot print requested format
+
+```markdown
+# This happens because you are trying to write your problem into a format that doesn't necessarily supports the type of constraints your constraint handler generates.
+http://listserv.zib.de/pipermail/scip/2016-April/002794.html
+```
+
+
+
+
+
+==================================================
+
+
+
+
+
+# 18 GCC
+
+../configure --prefix=/usr/local/gcc-10.2.0/ --enable-checking=release --enable-languages=c,c++ --disable-multilib 
+
+**编译报错**
+
+1. undefined reference to `MCFDRReadData(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+   collect2: error: ld returned 1 exit status
+
+```
+执行命令加上 -D_GLIBCXX_USE_CXX11_ABI=0
+```
+
+2. undefined reference to `MCFDRReadData(std::string, std::string)' collect2: error: ld returned 1 exit status
+
+   ```
+   
+   ```
+
+3.  c++17 须使用g++10.0.0以上版本编译
+
+    升级g++: https://code.bytecho.net/d/152
+
+4. undefined reference to xxx
+
+   ![1680488322575](C:\Users\15092\AppData\Roaming\Typora\typora-user-images\1680488322575.png)
+
+   原因是构造函数后面要加 “= default();”
+
+
+
+
+
+
+
+
+
+
+
+=====================================================
+
+# 19 c++
+
+编译报错： 
+
+```markdown
+"vector"does not name a type
+# #include <vector>
+# using std::vector
+
+
+```
+
+
+
+# 20 Xshell
+
+xftp 传输文件出错 ： 磁盘内存不够，du -sh * 查看内存空间，删除内存大的文件（如core）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```latex
+
+```
+
+
+
+##### 
+
+
+
+# 21 CMake
+
+1.
+
+```markdown
+CMake Error in CMakeLists.txt:
+  Target "runMCFDR" requires the language dialect "CXX17" (with compiler
+  extensions), but CMake does not know the compile flags to use to enable it.
+# 解决：编译时用 cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/g++ 
+```
+
+2. debug 模式： -DCMAKE_BUILD_TYPE=Debug
+
+
+
+# 22 Julia
+
+julia 安装 cplex
+
+```julia
+julia
+ENV["CPLEX_STUDIO_BINARIES"] = "/Applications/CPLEX_Studio221/cplex/bin/x86-64_osx/"
+import Pkg
+Pkg.add("CPLEX")
+Pkg.build("CPLEX")
+```
+
+Mac julia 安装 cplex 报错：ERROR: LoadError: Unable to install CPLEX.jl.
+
+解决方案：https://discourse.julialang.org/t/problem-installing-cplex-jl-with-cplex-22-1-1-on-mac-os/111967/10
+
+![image-20240504155347826](/Users/seanxiao/Library/Application Support/typora-user-images/image-20240504155347826.png)
+
+1. julia 建模不要用等式，数值问题太多！！
+
+
+
+
+
+# 23 Python
+
+1. 不输出warning 内容
+
+   ```
+   import warnings
+   warnings.simplefilter(action='ignore', category=FutureWarning)
+   ```
+
+   

@@ -1,0 +1,1451 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>1 putty - docs documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">docs  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">docs  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#vim">Vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#git">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#shell">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#awk">AWK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#cmip">CMIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#id7">大集群</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#id8">小集群</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#cplex">CPLEX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#polymake">Polymake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#matlab">MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#excel">Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#id9">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#vs-code">VS code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#gurobi">Gurobi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#scip">SCIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#gcc">GCC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#c">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#xshell">Xshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#cmake">CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#julia">Julia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html#python">Python</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/notes.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="putty">
+<h1>1 putty<a class="headerlink" href="#putty" title="Link to this heading">¶</a></h1>
+<p>1.从本地上传到服务器：
+pscp [源文件] [Linux用户名]&#64;[Linux服务器ip地址]:[Linux服务器目标目录]
+2.从服务器下载到本地：
+pscp [Linux用户名]&#64;[Linux服务器ip地址]:[Linux服务器目标目录] [源文件]</p>
+</section>
+<section id="ubuntu">
+<h1>2 Ubuntu<a class="headerlink" href="#ubuntu" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>2.1 ubuntu配置<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>Ubuntu：前面的事项按照（https://blog.csdn.net/weixin_41969690/article/details/104819039）进行；
+到了root环节，先用su root将Ubuntu root化，使用 vim /etc/apt/sources.list 将镜像源替换掉（替换时，按I键变成输入模式，再点击鼠标右键替换，按esc键换回命令模式，输入 ：wq 保存退出）；
+接着用（https://blog.csdn.net/weixin_41969690/article/details/104819039）后面的更新，安装gcc与g++；g++的安装要使用清华镜像源（https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/）</p>
+<p>E: Unable to correct problems, you have held broken packages.  ： 把镜像源中的bionic改为focal</p>
+<p>在ubuntu上使用服务器：ssh xiaozhou&#64;copt.amss.ac.cn</p>
+<p><strong>缺少zlib包：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> 
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">zlib1g</span><span class="o">.</span><span class="n">dev</span> 
+</pre></div>
+</div>
+<p><strong>ubuntu IP地址：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hostname</span> <span class="o">-</span><span class="n">I</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;{print $1}&#39;</span>
+</pre></div>
+</div>
+<p><strong>wsl配置可视化桌面</strong></p>
+<p>[<a class="reference external" href="https://www.chengxuzhilu.com/2395.html">Windows10]WSL2 下让 Ubuntu20.04 安装 Gnome 桌面 - 程序知路 (chengxuzhilu.com)</a></p>
+<p><a class="reference external" href="https://www.howtoing.com/tasksel-install-group-software-lamp-mail-dns-in-debian-ubuntu/">Tasksel - 在Debian和Ubuntu中轻松，快速地安装组软件 (howtoing.com)</a></p>
+<p><strong>问题： ubuntu 参考的对象类型不支持尝试的操作。【使用法1即可】</strong></p>
+<p><a class="reference external" href="https://blog.csdn.net/qq_42361881/article/details/121500438">(5条消息) win10启动ubuntu报错 参考的对象类型不支持尝试的操作_Chivalrous Expert的博客-CSDN博客_ubuntu参考的对象类型不支持尝试的操作</a></p>
+<p><strong>去掉终端提示音：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">inputrc</span>
+<span class="n">取消注释</span> <span class="nb">set</span> <span class="n">bell</span><span class="o">-</span><span class="n">style</span> <span class="n">none</span> <span class="n">这一行</span>
+<span class="n">重启终端</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>2.2 ubuntu命令<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>windows桌面传文件给ubuntu：shift+右键 -&gt; linux shell
+1.重命名:mv    -n &lt;旧文件名&gt;&lt;新文件名&gt;；-n 表示不覆盖已经存在的文件
+2.查看ubuntu文件所在的windows位置:  explorer.exe .
+3.以下两行输出c++文件命令:
+g++ [wenjianming] -o [xinwenjianming]
+./[xinwenjianming]
+4.查看文件所有的内容:  cat &lt;文件名&gt;
+5.查看文件的80%内容:  more &lt;文件名&gt;</p>
+<p>6.scp -r ./&lt;文件名&gt; xiaozhou&#64;159.226.92.26:/home/xiaozhou/&lt;目录&gt;: 复制ubuntu下文件到putty的                                                                                                             &lt;目录&gt;文件夹下
+7.scp -r xiaozhou&#64;159.226.92.26:/home/xiaozhou/&lt;目录&gt;/&lt;文件名&gt; ./&lt;目录&gt;: 复制putty下文件到                                                                                                             ubuntu的&lt;目录&gt;文件夹下
+8.同级目录之间进行切换:  cd ../&lt;目录&gt;</p>
+<p>9.zip解压： unzip [文件名]</p>
+<p>​	.gz 解压 ： gzip -d [文件名]</p>
+<p>10.解压 tar.gz 文件：tar -zxvf  [文件名]</p>
+<p>​	解压 .tar 文件：tar -xvf  [文件名]</p>
+<ol class="arabic" start="11">
+<li><p>解压报错， 则用 gzip -d</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span><span class="p">:</span> <span class="n">This</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">look</span> <span class="n">like</span> <span class="n">a</span> <span class="n">tar</span> <span class="n">archive</span>
+</pre></div>
+</div>
+</li>
+<li><p>参考的对象类型不支持尝试的操作</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>管理员运行powershell：
+netsh winsock reset
+</pre></div>
+</div>
+</li>
+<li><p>sudo 免密码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">visudo</span>
+<span class="c1"># 在最后一行添加：</span>
+<span class="n">xiaozhou</span> <span class="n">ALL</span><span class="o">=</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span> <span class="n">NOPASSWD</span><span class="p">:</span> <span class="n">ALL</span>
+</pre></div>
+</div>
+</li>
+<li><p>查看ip</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">net</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">ifconfig</span>
+</pre></div>
+</div>
+</li>
+<li></li>
+<li></li>
+</ol>
+<p>=========================================================</p>
+</section>
+</section>
+<section id="vim">
+<h1>3 vim<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h1>
+<section id="id3">
+<h2>3.1 vim配置<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>scp xiaozhou&#64;copt.amss.ac.cn:~/.vimrc ./
+scp -r xiaozhou&#64;copt.amss.ac.cn:~/.vim/bundle ~/.vim/</p>
+<ul class="simple">
+<li><p>设置ctags：https://blog.csdn.net/qq_29350001/article/details/77162347</p></li>
+</ul>
+<p>自动补全括号：
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap &lt; &lt;&gt;<Esc>i
+inoremap { {}<Esc>i
+inoremap ‘ ‘’<Esc>i
+inoremap “ “”<Esc>i</p>
+</section>
+<section id="id4">
+<h2>3.2 命令行<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>打开多个文件:  vim <file1> <file2>
+查看打开多个文件的序号：:ls
+打开文件后进行切换： :b&lt;数字&gt;
+分屏显示文件：vim -o&lt;数字&gt; <file1> <file2>…
+上下分割当前打开的文件：ctrl + w s  或 :sp
+左右分割当前的文件:  ctrl + w v  或  :vs
+关闭当前的分屏: ctrl + w c 或者 ctrl + w q
+删除从光标处开始到该单词结束的所有字符，并进入插入模式：cw
+把全文中的 &lt;1&gt; 替换成 &lt;2&gt;:  :%s/&lt;1&gt;/&lt;2&gt;/g
+将光标位置开始的3个字母改变其大小写:  3~
+折叠代码：zf[行序号]G
+打开所有折叠的代码：zR</p>
+<p>z回车 将光标所在行移动到屏幕顶端
+z. 将光标所在行移动到屏幕中间
+z- 将光标所在行移动到屏幕低端</p>
+<p>两文件进行切换：ctrl + 6	
+下一个文件： :bn
+上一个文件： :bp
+两窗口进行切换：ctrl + w + &lt;上下左右方向键&gt;
+tab切换：gt 或者 ，+ 数字
+关闭当前tab：:tabc</p>
+<p>[[   : 跳转到当前或者上一代码块（函数定义、类定义）开头
+][ : 跳转到当前代码块结尾 ]]   : 跳转到下一代码块开头
+[/   : 跳转到注释开头 （对/* <em>/有效）
+]/   : 跳转到注释结尾（对/</em> */有效）
+gD : 跳转到当前文件内标识符首次出现的位置，可用于跳转到变量的定义处
+gd  : 跳转到当前函数内标识符首次出现的位置，可用于跳转到局部变量的定义处
+‘’   : 跳转到光标上次所在位置，两个’</p>
+</section>
+<section id="id5">
+<h2>3.3 操作键<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h3>3.3.1 命令模式<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>h 或 向左箭头键(←):   光标向左移动一个字符
+j 或 向下箭头键(↓):	光标向下移动一个字符
+k 或 向上箭头键(↑):	光标向上移动一个字符
+l 或 向右箭头键(→):	光标向右移动一个字符</p>
+<p>[Ctrl] + [f] 	屏幕『向下』移动一页，相当于 [Page Down]按键 (常用)
+[Ctrl] + [b] 	屏幕『向上』移动一页，相当于 [Page Up] 按键 (常用)
+[Ctrl] + [d]	                屏幕『向下』移动半页
+[Ctrl] + [u]	                屏幕『向上』移动半页</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>              光标移动到非空格符的下一行
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>              光标移动到非空格符的上一行
+</pre></div>
+</div>
+<p>n<space>	                n 表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n 个                                字符。例如 20<space> 则光标会向后面移动 20 个字符距离。
+0 或功能键[Home]	这是数字『 0 』：移动到这一行的最前面字符处 (常用)
+$ 或功能键[End]	移动到这一行的最后面字符处(常用)</p>
+</li>
+</ul>
+<p>H	                光标移动到这个屏幕的最上方那一行的第一个字符
+M	                光标移动到这个屏幕的中央那一行的第一个字符
+L	                光标移动到这个屏幕的最下方那一行的第一个字符
+G	                移动到这个档案的最后一行(常用)
+nG	                n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行
+gg	                移动到这个档案的第一行，相当于 1G 啊！ (常用)
+n<Enter>	                n  为数字。光标向下移动 n 行(常用)</p>
+<p>/word	                向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串                                ，就输入 /vbird 即可！ (常用)
+?word	                向光标之上寻找一个字符串名称为 word 的字符串。
+n	                这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行                                 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为                                 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为                                 vbird 的字符串！
+N	                这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird                                 后，按下 N 则表示『向上』搜寻 vbird 。</p>
+<p>:n1,n2s/word1/word2/g	n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：
+『:100,200s/vbird/VBIRD/g』。(常用)
+:1,$s/word1/word2/g 或 :%s/word1/word2/g	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)
+:1,$s/word1/word2/gc 或 :%s/word1/word2/gc	从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</p>
+<p>x, X	在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)
+nx	n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。
+dd	删除游标所在的那一整行(常用)
+ndd	n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)
+d1G	删除光标所在到第一行的所有数据
+dG	删除光标所在到最后一行的所有数据
+d$	删除游标所在处，到该行的最后一个字符
+d0	那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符
+yy	复制游标所在的那一行(常用)
+nyy	n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)
+y1G	复制游标所在行到第一行的所有数据
+yG	复制游标所在行到最后一行的所有数据
+y0	复制光标所在的那个字符到该行行首的所有数据
+y$	复制光标所在的那个字符到该行行尾的所有数据
+p, P	p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)
+J	将光标所在行与下一行的数据结合成同一行
+c	重复删除多个数据，例如向下删除 10 行，[ 10cj ]
+u	复原前一个动作。(常用)
+[Ctrl]+r	重做上一个动作。(常用)
+这个 u 与 [Ctrl]+r 是很常用的指令！一个是复原，另一个则是重做一次～ 利用这两个功能按键，你的编辑，嘿嘿！很快乐的啦！
+.	不要怀疑！这就是小数点！意思是重复前一个动作的意思。 如果你想要重复删除、重复贴上等等动作，按下小数点『.』就好了！ (常用)</p>
+<p>ma  在该行打上标记a</p>
+<p>‘a 移动到标记a处</p>
+<p>‘A 用大写打标记不会因为退出而更改</p>
+<p>‘’ 两次单引号，跳转到光标上次所在位置</p>
+<p>ctrl + o ：跳转到光标早些时候的位置</p>
+<p>n== ：处理代码不对齐不缩进的情况</p>
+<p>esc + q : 处理recording &#64;w</p>
+</section>
+<section id="insert">
+<h3>3.3.2 insert模式<a class="headerlink" href="#insert" title="Link to this heading">¶</a></h3>
+<p>i, I	进入输入模式(Insert mode)：
+i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』。 (常用)
+a, A	进入输入模式(Insert mode)：
+a 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』。(常用)
+o, O	进入输入模式(Insert mode)：
+这是英文字母 o 的大小写。o 为在目前光标所在的下一行处输入新的一行； O 为在目前光标所在的上一行处输入新的一行！(常用)
+r, R	进入取代模式(Replace mode)：
+r 只会取代光标所在的那一个字符一次；R会一直取代光标所在的文字，直到按下 ESC 为止；(常用)
+上面这些按键中，在 vi 画面的左下角处会出现『–INSERT–』或『–REPLACE–』的字样。 由名称就知道该动作了吧！！特别注意的是，我们上面也提过了，你想要在档案里面输入字符时， 一定要在左下角处看到 INSERT 或 REPLACE 才能输入喔！
+[Esc]	退出编辑模式，回到一般模式中(常用)</p>
+</section>
+<section id="id7">
+<h3>3.3.3 底行模式<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>:w	将编辑的数据写入硬盘档案中(常用)
+:w!	若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！
+:q	离开 vi (常用)
+:q!	若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。
+注意一下啊，那个惊叹号 (!) 在 vi 当中，常常具有『强制』的意思～
+:wq	储存后离开，若为 :wq! 则为强制储存后离开 (常用)
+ZZ	这是大写的 Z 喔！如果修改过，保存当前文件，然后退出！效果等同于(保存并退出)
+ZQ	不保存，强制退出。效果等同于 :q!。
+:w [filename]	将编辑的数据储存成另一个档案（类似另存新档）
+:r [filename]	在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面
+:n1,n2 w [filename]	将 n1 到 n2 的内容储存成 filename 这个档案。
+:! command	暂时离开 vi 到指令行模式下执行 command 的显示结果！例如
+『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息</p>
+<p>=========================================================</p>
+</section>
+</section>
+</section>
+<section id="git">
+<h1>4 git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h1>
+<p>利用（https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424）</p>
+<section id="id8">
+<h2>4.1 git安装<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<p>1.安装git  sudo apt-get install git
+2.创建版本库：选择合适的地方，创建目录mkdir learngit; cd learngit; pwd；通过git init把这个目录变成可管理的仓库
+3.创建文件，利用git add 将文件放入暂存区，必须是有新内容才是add
+4.git commit -am [注释] 提交至仓库
+5.建立与github的连接：在git的主目录下输入 ssh-keygen -t rsa -C “邮箱”；一直回车；</p>
+<p>6.ssh-keygen -t rsa  生成公钥</p>
+<p>7.cat ~/.ssh/id_rsa.pub 查看公钥</p>
+<p>8.解决ssh: connect to host github.com port 22: Connection refused</p>
+<p><a class="reference external" href="https://blog.csdn.net/mochou111/article/details/96475522">(5条消息) Git测试报错ssh: connect to host gitub.com port 22: Connection refused_神芷迦蓝寺-CSDN博客</a></p>
+</section>
+<section id="id9">
+<h2>4.2 git命令<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<p>git分支：
+查看分支: git branch
+创建分支: git branch <name>
+切换分支: git checkout <name> 或 git switch <name>
+创建+切换分支: git checkout -b <name> 或 git switch -c <name>
+合并某分支到当前分支: git merge –no-ff  <name>
+删除分支: git branch -d <name>
+分支推送: git push origin &lt;分支名&gt;</p>
+<p>查看修改的内容：git diff</p>
+<p>标签(与commit挂钩）
+创建标签: git tag <name>
+删除标签: git tag -d <name>
+推送标签至远程: git push origin <name>
+颜色:  git config –global color.ui true</p>
+<p>克隆远程仓库到新文件夹：git clone  <repository> <new directory></p>
+<p>更改命令名: git config –global alias.<co checkout></p>
+<p>不跟踪文件：git rm -r –cached <filename></p>
+<p>罗列不跟踪文件夹：git rm -r -n –cached <filename></p>
+<p>不跟踪文件夹：git rm -r –cached <filename></p>
+<p>版本回退: git reset –hard <id></p>
+<p>git clone远程仓库时重命名本地文件夹：git clone <a class="reference external" href="http:">http:</a>  <dirname></p>
+<p>git 将一个分支的文件夹移动到当前分支：git checkout 来源分支 – 文件路径</p>
+<p>git 比较两个分支的某个文件异同：git diff branch1 branch2 <path-to-file></p>
+<p>git stash 回退：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="nb">list</span>
+<span class="n">git</span> <span class="n">stash</span> <span class="n">apply</span> <span class="n">stash</span><span class="o">@</span><span class="p">{</span><span class="nb">id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>新仓库：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>                 <span class="c1">#取消 git init： rm -rf .git           </span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s1">&#39;xz&#39;</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">repository</span> <span class="n">address</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span><span class="o">/</span><span class="n">master</span>
+
+<span class="c1"># fatal: &#39;main&#39; does not appear to be a git repository</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span> <span class="c1">#查看远程信息</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">remove</span> <span class="n">main</span> 
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">repository</span> <span class="n">address</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
+</div>
+<p>cmipwork目录下git：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span> <span class="n">master</span><span class="p">:</span><span class="n">master1103</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">master1103</span>
+<span class="n">git</span> <span class="n">diff</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s1">&#39;comment&#39;</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">master1103</span>
+<span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span>
+<span class="n">make</span> <span class="n">test</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">xz210710</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+</div>
+<p>服务器修改代码后，在集群跑测试集时，别用scp，用git：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span> <span class="n">parallel_columns</span><span class="p">:</span><span class="n">parallel_columns</span>  
+<span class="n">git</span> <span class="n">diff</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">parallel_columns</span>
+<span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span>
+<span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">cmip</span> <span class="o">-</span><span class="n">f</span> <span class="n">check</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="n">collection</span><span class="o">/</span><span class="n">decomp1</span><span class="o">.</span><span class="n">mps</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2>4.3 git 问题<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>gitee ：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;mcfdr&#39;...
+[session-21415b99] Auth error: 404 not found!
+
+#解决： 检查 git clone 后面的链接是否有错
+</pre></div>
+</div>
+</li>
+</ol>
+<p>============================================</p>
+</section>
+</section>
+<section id="zimpl">
+<h1>5 zimpl<a class="headerlink" href="#zimpl" title="Link to this heading">¶</a></h1>
+<p>命令全部在 zimpl.pdf 使用手册中</p>
+<p>1.vim &lt;文件名&gt;.zpl : 新建或打开zpl文件
+2.zimpl &lt;文件名&gt;.zpl :  转换为lp文件
+3.zimpl &lt;文件名&gt;.zpl -t mps : 转为mps格式
+4.scip -f &lt;文件名&gt;.zpl / lp 或 cplex -f &lt;文件名&gt;.lp : 求解器求解</p>
+<p>⑵
+1.字符串用“”标注起来
+2.数组用&lt;&gt;，如&lt;1,2,”x”&gt;
+3.约束条件命令：subto name: expr sense term sense expr； 其中 expr 表示 表达式，sense是&lt;=,&gt;=或==的一种，term 为目标.。  用 and 连接两个不同的约束条件</p>
+<p>====================================================</p>
+</section>
+<section id="shell">
+<h1>6 shell<a class="headerlink" href="#shell" title="Link to this heading">¶</a></h1>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>./&lt;文件名&gt;
+./&lt;文件名&gt;
+</pre></div>
+</div>
+<p>其它命令可以查看Microsoft edge的收藏</p>
+<p>统计当前目录下文件数量：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;^-&quot;</span><span class="w"> </span><span class="p">|</span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>分割字符串</p>
+<p><a class="reference external" href="https://blog.csdn.net/bandaoyu/article/details/120659630">(5条消息) 【shell】shell字符串分割|文件分割|剪切|截取_bandaoyu的博客-CSDN博客_shell分割字符串读取</a></p>
+<p>定义变量时，双引号里需要包括双引号，则可以使用转义字符 \</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;a </span><span class="se">\&quot;</span><span class="s2">b</span><span class="se">\&quot;</span><span class="s2"> c&quot;</span>
+</pre></div>
+</div>
+<p>Bad for loop variable</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">改用</span> <span class="n">bash</span> <span class="n">执行</span>
+</pre></div>
+</div>
+<p>判断的时候，if 与 [ 必须隔开</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+<span class="n">then</span>
+<span class="o">...</span>
+<span class="k">elif</span> <span class="p">[]</span>
+<span class="n">then</span>
+<span class="o">...</span>
+<span class="k">else</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>(1)
+if结构：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">1</span>.if<span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">		</span><span class="nb">command</span>
+<span class="w">		</span><span class="nb">command</span>
+<span class="k">fi</span>
+
+<span class="m">2</span>.if<span class="w"> </span><span class="nb">test</span><span class="w"> </span>条件<span class="p">;</span><span class="k">then</span>
+<span class="w">	</span>命令
+<span class="k">fi</span>
+
+<span class="m">3</span>.if<span class="w"> </span><span class="o">[[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">	</span>命令
+<span class="k">fi</span>
+
+<span class="m">4</span>.<span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">command</span>
+
+
+<span class="k">if</span><span class="w"> </span>else结构
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">		</span>command1
+<span class="w">	</span><span class="k">else</span>
+<span class="w">		</span>command2
+<span class="k">fi</span>
+
+<span class="o">[</span><span class="w"> </span>条件<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>command1<span class="w"> </span><span class="o">||</span><span class="w"> </span>command2
+
+
+<span class="k">if</span>…elif…else结构
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition1<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">		</span>command1<span class="w">  	</span>结束
+<span class="w">	</span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition2<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">		</span>command2<span class="w">   	</span>结束
+<span class="w">	</span><span class="k">else</span>
+<span class="w">		</span>command3
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>for 结构</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="m">10</span><span class="p">;</span>i++<span class="o">))</span>
+<span class="k">do</span>
+...
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>==============================================</p>
+</section>
+<section id="awk">
+<h1>7 awk<a class="headerlink" href="#awk" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>内置变量：</p></li>
+</ul>
+<p>FILENAME：文件名</p>
+<p>NF：列数</p>
+<p>NR：行数</p>
+<p>-F：设置分隔符</p>
+<ul>
+<li><p>使用变量：”’${变量名}’”</p></li>
+<li><p>if语句</p>
+<div class="highlight-awk notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span>
+
+<span class="p">{</span>
+
+ <span class="nx">command</span><span class="p">;</span>
+
+ <span class="nx">command</span><span class="p">;</span>
+
+ <span class="err">…</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>awk字符串转数字</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;BEGIN{a=&quot;100&quot;;b=&quot;10test10&quot;;print (a+b+0);}&#39;</span>	
+<span class="o">&gt;</span> <span class="mi">110</span>
+</pre></div>
+</div>
+<p>只需要将变量通过”+”连接运算。自动强制将字符串转为整型。非数字变成0，发现第一个非数字字符，后面自动忽略。</p>
+<p>awk 使用外部变量：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="o">-</span><span class="n">v</span> <span class="n">typenode</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="o">-</span><span class="n">f</span> <span class="n">read</span><span class="o">-</span><span class="n">dnndp</span><span class="o">.</span><span class="n">awk</span> <span class="n">networks</span><span class="o">/</span><span class="n">nsf2</span><span class="o">.</span><span class="n">nd</span>
+</pre></div>
+</div>
+<p>集群检查collection输出：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;/column/{print FILENAME}&#39;</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>分隔指定字符串</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;8_sf.out&quot;</span> <span class="o">|</span><span class="n">awk</span> <span class="o">-</span><span class="n">F</span> <span class="s1">&#39;.&#39;</span> <span class="s1">&#39;{split($1,a,&quot;_&quot;); print a[1],a[2]}&#39;</span>
+</pre></div>
+</div>
+<p>最大值，平均值</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;BEGIN{ max = 0} {if ($1 &gt; max) max = $1;} END{printf max}&#39;</span>
+</pre></div>
+</div>
+<p>字符串拼接</p>
+<div class="highlight-awk notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;a&quot;</span> <span class="s2">&quot;b&quot;</span> <span class="s2">&quot;c&quot;</span> 
+<span class="err">用空格隔开，</span><span class="nx">awk自动拼接字符串</span><span class="err">，输出为</span> <span class="err">“</span><span class="nx">abc</span><span class="err">”</span>
+</pre></div>
+</div>
+<p>处理多个文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">ARGIND</span> <span class="c1"># 当前被处理参数标志</span>
+
+<span class="n">awk</span> <span class="s1">&#39;ARGIND==1{...}ARGIND==2{...}ARGIND==3{...}... &#39;</span> <span class="n">file1</span> <span class="n">file2</span> <span class="n">file3</span> <span class="o">...</span>
+
+
+<span class="mf">2.</span> <span class="n">ARGV</span> <span class="c1"># 命令行参数数组</span>
+
+<span class="n">awk</span> <span class="s1">&#39;FILENAME==ARGV[1]{...}FILENAME==ARGV[2]{...}FILENAME==ARGV[3]{...}...&#39;</span> <span class="n">file1</span> <span class="n">file2</span> <span class="n">file3</span> <span class="o">...</span>
+
+
+</pre></div>
+</div>
+<p>=============================================</p>
+</section>
+<section id="cmip">
+<h1>8 CMIP<a class="headerlink" href="#cmip" title="Link to this heading">¶</a></h1>
+<section id="id11">
+<h2>服务器<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<p>gitlab 账号密码</p>
+<p>账号：xiaozhou1</p>
+<p>密码：xiao&#64;2023</p>
+<ol class="arabic">
+<li><p>scp -r xiaozhou&#64;159.226.92.26:/home/xiaozhou/</p></li>
+<li><p>服务器密码: xz&#64;2021</p></li>
+<li><p>make clean
+make -j
+make test</p>
+<p>vim check/results/default/testeasy.cmip.1threads.7200s.out</p>
+</li>
+<li><p>debugsol</p>
+<p>./bin/cmip_debug -f check/instances/testeasy/p0548.mps -s check/solution sol.sol</p>
+</li>
+<li><p>检查内存泄漏</p></li>
+</ol>
+<ul>
+<li><p>./val ./bin/cmip -f check/instances/testeasy/p0548.mps     具体到一个例子</p></li>
+<li><p>带debug</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>make ver=debug -j
+
+./val ./bin/cmip_debug -f check/instances/testeasy/p0548.mps
+</pre></div>
+</div>
+<p>vim ./valgrind_report.log</p>
+</li>
+<li><p>修改bool变量：</p></li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBoolParam</span><span class="p">(</span><span class="n">CMIPBoolParam_Presolve_</span><span class="o">&lt;&gt;</span><span class="n">_IsExecute</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>并在前面加上 CMIPEnvPtr en</p>
+<p>CMIP用cplex测试：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">在</span> <span class="n">check</span><span class="o">/</span><span class="nb">bin</span> <span class="n">下执行</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">cplex</span>
+
+<span class="n">scripts</span><span class="o">/</span><span class="n">cplex_run</span> <span class="n">为对应的提交设置文件</span>
+</pre></div>
+</div>
+<p>4.更新ctags：ctags -R</p>
+<p>5.g++或make编译不成功：</p>
+<p>​			g++: fatal error: Killed signal terminated program cc1plus
+​			compilation terminated.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gs">**法1：**</span>
+<span class="gh"># 先删除原先分区</span>
+sudo swapoff /var/cache/swap/swap0
+sudo rm /var/cache/swap/swap0
+<span class="gh"># 设置分区的大小</span>
+<span class="gh"># bs=64M是块大小，count=64是块数量，所以swap空间大小是bs*count=4096MB=4GB</span>
+sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64
+<span class="gh"># 设置该目录权限</span>
+sudo chmod 0600 /var/cache/swap/swap0
+<span class="gh"># 创建SWAP文件</span>
+sudo mkswap /var/cache/swap/swap0
+<span class="gh"># 激活SWAP文件</span>
+sudo swapon /var/cache/swap/swap0
+<span class="gh"># 查看SWAP信息是否正确</span>
+sudo swapon -s
+
+<span class="gs">**法2**</span>
+sudo dd if=/dev/zero of=/swapfile bs=1G count=6
+<span class="gh"># count的大小就是增加的swap空间的大小，1G是块大小为1G，所以空间大小是bs*count=6G</span>
+sudo mkswap /swapfile
+<span class="gh"># 把刚才空间格式化成swap格式</span>
+su
+chmod 0600 /swapfile  
+sudo swapon /swapfile
+<span class="gh"># 使用刚才创建的swap空间</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h2>大集群<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<p>从集群复制文件：</p>
+<p>scp -P 10190 ./&lt;&gt; suzhaogang&#64;10.4.3.17:/share/home/suzhaogang/xiaozhou/</p>
+<p>大集群复制文件到服务器：scp -r &lt;&gt; xiaozhou&#64;159.226.92.26:~/cmipwork</p>
+<p>[密码：<strong>xz&#64;2021</strong>]</p>
+<p>大集群复制文件到小集群：scp -r &lt;&gt; xiaozhou&#64;10.1.20.53:~/cmipwork</p>
+<p>[密码：<strong>xz2022</strong>]</p>
+<p>大集群：	IP为：10.4.3.17</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>suzhaogang
+SuZhaoGang@2021
+
+ythu
+yutinghu@1578
+
+diaoruoyu
+LyTo<span class="p">&amp;</span>Mjy5J
+
+zhangyuhang
+1r0i@1maQV
+</pre></div>
+</div>
+<p>查看进程状态</p>
+<p>ps -aux | grep “suzhaogang”</p>
+<p>杀死所有进程</p>
+<p>ps -aux | grep “suzhaogang” | awk ‘$1==”suzhaogang” {print $2}’ | xargs kill -9</p>
+<p>​</p>
+<p><img alt="image-20220410140238561" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220410140238561.png" /></p>
+<p>如果出现./bin/cmip: error while loading shared libraries: libClp.so.1: cannot open shared object file: No such file or directory错误：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">cmipwork</span><span class="o">/</span><span class="n">interface</span> <span class="n">xz</span><span class="o">/</span><span class="n">cmipwork</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>测试库测试：
+make testcluster TEST=测试库 TIME=7200 OUTFILE=文件夹 SETTING=控制方法的文件
+(make ver=opt testcluster TEST=collection TIME=300 OUTFILE=LWNoTwoCols SETTING=TwoRowsNoTowcols.set)</p>
+<p>单个例子测试：	./bin/cmip -f check/instances/testeasy/misc03.mps (-t 可以用来生成预处理后的文件)
+单个例子带控制方法: ./bin/cmip -f check/instances/testeasy/atm_5_10_1.mps -set NoTwoRow.set
+Example:NoTwoRow.set 中控制方法使用:
+presolve/isOpen_DetectReduntancy  0
+presolve/isOpen_KnapsackScale  0
+CMIP中awk使用: awk -f result_compare.awk ./lv1/time600.res ./lv2/time600.res
+自己写awk: ./withdrawFP.awk penalty/penalty.out</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">cmip</span> <span class="o">-</span><span class="n">f</span> <span class="n">check</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="n">testeasy</span><span class="o">/</span><span class="n">p0548</span><span class="o">.</span><span class="n">mps</span>
+<span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">cmip</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">cmipwork</span><span class="o">/</span><span class="n">check</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="n">collection</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>集群测试：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">opt</span> <span class="n">testcluster</span> <span class="n">TEST</span><span class="o">=</span><span class="n">time60</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">100</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">gubtime60</span><span class="o">-</span><span class="n">sec</span>
+
+<span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">release</span> <span class="n">testcluster</span> <span class="n">TEST</span><span class="o">=</span><span class="c1"># OUTFILE=# SETTING=#.set TIME=7200 SEEDFILE=default MPICORE=360</span>
+
+</pre></div>
+</div>
+<p>CPLEX 测试提交(在cmipwork/check目录下提交)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">release</span> <span class="n">testcluster</span> <span class="n">SOLVER</span><span class="o">=</span><span class="n">cplex</span> <span class="n">TEST</span><span class="o">=</span><span class="n">gubbenchmark</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">7200</span> <span class="n">SETTING</span><span class="o">=</span><span class="n">offgub</span><span class="o">.</span><span class="n">prm</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">cplexoffgub</span> <span class="n">SEEDFILE</span><span class="o">=</span><span class="n">default</span> <span class="n">MPICORE</span><span class="o">=</span><span class="mi">108</span>
+
+<span class="n">bsub</span> <span class="o">-</span><span class="n">J</span> <span class="n">rocI</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">11</span> <span class="o">-</span><span class="n">q</span> <span class="n">batch</span> <span class="o">-</span><span class="n">R</span> <span class="s2">&quot;span[ptile=2]&quot;</span> <span class="o">-</span><span class="n">n</span> <span class="mi">2</span> <span class="o">-</span><span class="n">e</span> <span class="n">cplexgubtest</span><span class="o">/</span><span class="n">rocI</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">11.</span><span class="n">mps</span><span class="o">.</span><span class="n">gz</span><span class="o">.</span><span class="n">err</span> <span class="o">-</span><span class="n">o</span> <span class="n">cplexgubtest</span><span class="o">/</span><span class="n">rocI</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">11.</span><span class="n">mps</span><span class="o">.</span><span class="n">gz</span><span class="o">.</span><span class="n">out</span> <span class="s2">&quot;cplex -c read /share/data/collection/rocI-4-11.mps.gz read cplex.prm opt &quot;</span>
+</pre></div>
+</div>
+<p>SCIP 测试提交(在cmipwork/check目录下提交)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">在</span> <span class="n">check</span><span class="o">/</span><span class="nb">bin</span> <span class="n">下执行</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">scipoptsuite</span><span class="o">-</span><span class="mf">8.0.0</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">scip</span> 
+<span class="n">在</span> <span class="n">cmipwork</span><span class="o">/</span><span class="n">check</span> <span class="n">下</span>
+<span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">release</span> <span class="n">testcluster</span> <span class="n">SOLVER</span><span class="o">=</span><span class="n">scip</span> <span class="n">BIN</span><span class="o">=</span><span class="n">scip</span> <span class="n">TEST</span><span class="o">=</span> <span class="n">SETTING</span><span class="o">=.</span><span class="n">set</span> <span class="n">OUTFILE</span><span class="o">=</span> <span class="n">MPICORE</span><span class="o">=</span><span class="mi">360</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">7200</span> <span class="n">SEEDFILE</span><span class="o">=</span><span class="n">default</span>
+</pre></div>
+</div>
+<p>跑遍collection测试集：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">opt</span> <span class="n">testcluster</span> <span class="n">TEST</span><span class="o">=</span><span class="n">collection</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">600</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">parallelcols</span>
+<span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">opt</span> <span class="n">testcluster</span> <span class="n">TEST</span><span class="o">=</span><span class="n">mergevar</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">7200</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">onParallelCol</span>
+<span class="n">make</span> <span class="n">ver</span><span class="o">=</span><span class="n">opt</span> <span class="n">testcluster</span> <span class="n">TEST</span><span class="o">=</span><span class="n">mergevar</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">7200</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">offParallelCol</span> <span class="n">SETTING</span><span class="o">=</span><span class="n">ParallelCols</span><span class="o">.</span><span class="n">set</span>
+</pre></div>
+</div>
+<p>在results目录下执行</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="o">-</span><span class="n">f</span> <span class="n">parse_cmip_check</span><span class="o">.</span><span class="n">awk</span> <span class="n">OUTFILE</span><span class="o">/*.</span><span class="n">out</span>
+</pre></div>
+</div>
+<p>即可发现预处理、启发式、割平面耗时的算例</p>
+<p>结束进程：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">killall</span>
+<span class="n">bkill</span> <span class="o">&lt;</span><span class="n">JobID</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>检查容量：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">sh</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>后台运行</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">run</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>删除core</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>check 目录下：
+nohup ./rmcore.sh &amp;
+</pre></div>
+</div>
+<p>复制服务器的预处理文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="n">xiaozhou</span><span class="o">@</span><span class="mf">159.226.92.26</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">xiaozhou</span><span class="o">/</span><span class="n">cmipwork</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">cmip</span><span class="o">/</span><span class="n">CMIPPresolve</span><span class="o">.</span><span class="n">cpp</span> <span class="o">~/</span><span class="n">xz</span><span class="o">/</span><span class="n">cmipwork</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">cmip</span>
+</pre></div>
+</div>
+<p>检查解得结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">check</span><span class="o">/</span><span class="n">checker</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">solchecker</span> <span class="o">~/</span><span class="n">cmipwork</span><span class="o">/</span><span class="n">check</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="n">collection</span><span class="o">/</span><span class="n">app2</span><span class="o">-</span><span class="mf">1.</span><span class="n">mps</span><span class="o">.</span><span class="n">gz</span> <span class="n">sol</span><span class="o">.</span><span class="n">sol</span>
+</pre></div>
+</div>
+<p>debug检查：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">./</span><span class="n">val</span> <span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">cmip_debug</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">cmipwork</span><span class="o">/</span><span class="n">check</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="n">collection</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>比较开关平行列的结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="o">-</span><span class="n">f</span> <span class="n">result_compare</span><span class="o">.</span><span class="n">awk</span> <span class="o">./</span><span class="n">onParallelCol</span><span class="o">/</span><span class="n">mergevar</span><span class="o">.</span><span class="n">cmip</span><span class="mf">.1</span><span class="n">threads</span><span class="mf">.7200</span><span class="n">s</span><span class="o">.</span><span class="n">res</span> <span class="o">./</span><span class="n">offParallelCol</span><span class="o">/</span><span class="n">mergevar</span><span class="o">.</span><span class="n">cmip</span><span class="mf">.1</span><span class="n">threads</span><span class="mf">.7200</span><span class="n">s</span><span class="o">.</span><span class="n">res</span>
+
+ <span class="n">awk</span> <span class="o">-</span><span class="n">f</span> <span class="n">result_compare</span><span class="o">.</span><span class="n">awk</span> <span class="o">./</span><span class="n">benchmark</span><span class="o">-</span><span class="n">ongub</span><span class="o">/</span><span class="n">benchmark_cmip</span><span class="o">.</span><span class="n">cmip</span><span class="mf">.1</span><span class="n">threads</span><span class="mf">.7200</span><span class="n">s</span><span class="o">.</span><span class="n">res</span> <span class="o">./</span><span class="n">benchmark</span><span class="o">-</span><span class="n">offgub</span><span class="o">/</span><span class="n">benchmark_cmip</span><span class="o">.</span><span class="n">cmip</span><span class="mf">.1</span><span class="n">threads</span><span class="mf">.7200</span><span class="n">s</span><span class="o">.</span><span class="n">res</span>
+
+</pre></div>
+</div>
+<p>替换成 TEST 可读形式：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="n">collection</span>\<span class="o">./..</span>\<span class="o">/..</span>\<span class="o">/..</span>\<span class="o">/</span><span class="n">cmipwork</span>\<span class="o">/</span><span class="n">check</span>\<span class="o">/</span><span class="n">instances</span>\<span class="o">/</span><span class="n">collection</span>\<span class="o">//</span><span class="n">g</span>
+<span class="p">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="mi">0</span>\<span class="o">.</span><span class="n">cmip</span>\<span class="mf">.1</span><span class="n">threads</span>\<span class="mf">.600</span><span class="n">s</span>\<span class="o">.</span><span class="n">out</span><span class="o">/</span><span class="n">mps</span>\<span class="o">.</span><span class="n">gz</span><span class="o">/</span><span class="n">g</span>
+</pre></div>
+</div>
+<p>集群检查 collection 输出：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>awk<span class="w"> </span><span class="s1">&#39;/ParallelColumns/{print FILENAME}&#39;</span><span class="w"> </span>*<span class="w"> </span>&gt;<span class="w"> </span>effectConsPara
+awk<span class="w"> </span><span class="s1">&#39;/M_/{print FILENAME}&#39;</span><span class="w"> </span>*<span class="w"> </span>&gt;<span class="w"> </span>effectMergevar
+awk<span class="w"> </span><span class="s1">&#39;/DiffObj/{print FILENAME}&#39;</span><span class="w"> </span>*<span class="w"> </span>&gt;<span class="w"> </span>effectDiffobj
+awk<span class="w"> </span><span class="s1">&#39;/Parallel But Not Merge/{print FILENAME}&#39;</span><span class="w"> </span>*<span class="w"> </span>&gt;<span class="w"> </span>effectNotmerge
+</pre></div>
+</div>
+<p>去掉重复的行</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>awk<span class="w"> </span><span class="s1">&#39;!a[$0]++&#39;</span><span class="w"> </span>effectConsPara<span class="w"> </span>&gt;<span class="w"> </span>ConsPara
+awk<span class="w"> </span><span class="s1">&#39;!a[$0]++&#39;</span><span class="w"> </span>effectMergevar<span class="w"> </span>&gt;<span class="w"> </span>Mergevar
+awk<span class="w"> </span><span class="s1">&#39;!a[$0]++&#39;</span><span class="w"> </span>effectDiffobj<span class="w"> </span>&gt;<span class="w"> </span>Diffobj
+awk<span class="w"> </span><span class="s1">&#39;!a[$0]++&#39;</span><span class="w"> </span>effectNotmerge<span class="w"> </span>&gt;<span class="w"> </span>Notmerge
+</pre></div>
+</div>
+<p>各部分awk位于：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmipwork</span><span class="o">/</span><span class="n">check</span><span class="o">/</span><span class="n">scripts</span>
+</pre></div>
+</div>
+<p>求最大值</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;BEGIN{ max = 0} {if ($1 &gt; max) max = $1;} END{printf max}&#39;</span>
+</pre></div>
+</div>
+<p>统计当前目录下文件数量：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;^-&quot;</span><span class="w"> </span><span class="p">|</span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>统计文件中重复字符串出现的次数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">-</span><span class="n">o</span> <span class="s1">&#39;字符串&#39;</span> <span class="n">file</span> <span class="o">|</span><span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;BEGIN{sign = 0;} {/parallel column/ sign = 1;} END{if(sign = 1) print FILENAME;}&#39;</span> <span class="o">*</span> <span class="o">&gt;</span> <span class="n">xzeffect</span>
+</pre></div>
+</div>
+<p>查看进程: bjobs</p>
+<p>cplex</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">testcluster</span> <span class="n">SOLVER</span><span class="o">=</span><span class="n">cplex</span> <span class="n">TEST</span><span class="o">=</span><span class="mi">30</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">h</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">60</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">SSNDP_cplex</span>
+<span class="n">make</span> <span class="n">testcluster</span> <span class="n">SOLVER</span><span class="o">=</span><span class="n">cplex</span> <span class="n">TEST</span><span class="o">=</span><span class="mi">30</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">h</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">3600</span> <span class="n">OUTFILE</span><span class="o">=</span><span class="n">SSNDP_cplex</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h2>小集群<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<p>账号：xiaozhou</p>
+<p>密码：xz2022</p>
+<p>从集群复制文件：rsync -r xiaozhou&#64;10.1.20.53:</p>
+<p>IP为：10.1.20.53
+外网请使用vpn，详细如下：
+vpn：https://159.226.47.20/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>team_daiyuhong
+dyh@lsec.0621
+
+lvwei
+h#Z79DnjdC
+
+yuchengyang
+$8yMgyQ13x
+
+liuyachen
+rcTWd9^Se1
+</pre></div>
+</div>
+<p>查看进程状态</p>
+<p>ps -aux | grep “xiao”</p>
+<p>杀死所有进程</p>
+<p>ps -aux | grep “xiao” | awk ‘$1==”xiaozhou” {print $2}’ | xargs kill -9</p>
+<p><strong>集群配置</strong>:</p>
+<p>x86_64 架构</p>
+<p>具有 52 个 CPU 核心</p>
+<p>每个核心有 1 个线程</p>
+<p>Intel Xeon Gold 6230R 处理器</p>
+<p>主频为 2.10GHz</p>
+<p>内存为 250 G</p>
+<p>=========================================</p>
+</section>
+</section>
+<section id="cplex">
+<h1>9 CPLEX<a class="headerlink" href="#cplex" title="Link to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cplex</span> <span class="o">-</span><span class="n">c</span> <span class="n">read</span> <span class="n">inst5</span><span class="o">.</span><span class="n">lp</span> <span class="n">opt</span>
+<span class="n">cplex</span> <span class="o">-</span><span class="n">c</span> <span class="n">read</span> <span class="n">inst5</span><span class="o">.</span><span class="n">lp</span> <span class="n">opt</span> <span class="n">wr</span> <span class="n">inst5</span><span class="o">.</span><span class="n">sol</span>
+<span class="n">cplex</span> <span class="o">-</span><span class="n">c</span> <span class="n">read</span> <span class="n">inst5</span><span class="o">.</span><span class="n">lp</span> <span class="nb">set</span> <span class="n">mip</span> <span class="n">tol</span> <span class="n">mipgap</span> <span class="mi">0</span> <span class="n">opt</span> <span class="n">wr</span> <span class="n">inst5</span><span class="o">.</span><span class="n">sol</span>
+<span class="n">cplex</span> <span class="o">-</span><span class="n">c</span> <span class="n">read</span> <span class="n">inst5</span><span class="o">.</span><span class="n">lp</span> <span class="nb">set</span> <span class="n">mip</span> <span class="n">tol</span> <span class="n">mipgap</span> <span class="mi">0</span> <span class="nb">set</span> <span class="n">timelim</span> <span class="mi">3</span> <span class="n">opt</span>
+</pre></div>
+</div>
+<p>Ubuntu安装cplex：从集群或服务器 scp 压缩包</p>
+<p>编译：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">m64</span> <span class="o">-</span><span class="n">fPIC</span>  <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">ILOG</span><span class="o">/</span><span class="n">CPLEX_Studio201</span><span class="o">/</span><span class="n">cplex</span><span class="o">/</span><span class="n">include</span> <span class="o">./</span><span class="n">admipex5</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">admipex5</span><span class="o">.</span><span class="n">o</span>
+
+<span class="n">gcc</span> <span class="o">-</span><span class="n">m64</span> <span class="o">-</span><span class="n">fPIC</span>  <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">ILOG</span><span class="o">/</span><span class="n">CPLEX_Studio201</span><span class="o">/</span><span class="n">cplex</span><span class="o">/</span><span class="n">include</span> <span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">ILOG</span><span class="o">/</span><span class="n">CPLEX_Studio201</span><span class="o">/</span><span class="n">cplex</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="n">_linux</span><span class="o">/</span><span class="n">static_pic</span>  <span class="o">-</span><span class="n">o</span> <span class="n">admipex5</span> <span class="n">admipex5</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">lcplex</span> <span class="o">-</span><span class="n">lm</span> <span class="o">-</span><span class="n">lpthread</span> <span class="o">-</span><span class="n">ldl</span>
+</pre></div>
+</div>
+<p>设置参数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://www.ibm.com/docs/en/icos/12.10.0?topic=s-cpxxsetintparam-cpxsetintparam
+</pre></div>
+</div>
+<p>关预处理：</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="n">ibm</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">icos</span><span class="o">/</span><span class="mf">12.7.1.0</span><span class="o">?</span><span class="n">topic</span><span class="o">=</span><span class="n">parameters</span><span class="o">-</span><span class="n">presolve</span><span class="o">-</span><span class="n">switch</span>
+<span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="n">ibm</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">icos</span><span class="o">/</span><span class="mf">12.7.1.0</span><span class="o">?</span><span class="n">topic</span><span class="o">=</span><span class="n">parameters</span><span class="o">-</span><span class="n">primal</span><span class="o">-</span><span class="n">dual</span><span class="o">-</span><span class="n">reduction</span><span class="o">-</span><span class="n">type</span>
+<span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="n">ibm</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">icos</span><span class="o">/</span><span class="mf">12.7.1.0</span><span class="o">?</span><span class="n">topic</span><span class="o">=</span><span class="n">parameters</span><span class="o">-</span><span class="n">relaxed</span><span class="o">-</span><span class="n">lp</span><span class="o">-</span><span class="n">presolve</span><span class="o">-</span><span class="n">switch</span>
+</pre></div>
+</div>
+<p>==========================================</p>
+</section>
+<section id="polymake">
+<h1>10 polymake<a class="headerlink" href="#polymake" title="Link to this heading">¶</a></h1>
+<p>读顶点（第一项规定必须为1）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>open(INPUT,&quot;&lt;&quot;,&quot;Fea.poly&quot;);$matrix=new Matrix&lt;Rational&gt;(&lt;INPUT&gt;); print $matrix;$p=new Polytope&lt;Rational&gt;(POINTS=&gt;$matrix);print_constraints($p);print($p-&gt;FACETS);
+</pre></div>
+</div>
+<p>读所有约束：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>open(INPUT1,&quot;&lt;&quot;,&quot;Ine.txt&quot;);open(INPUT2,&quot;&lt;&quot;,&quot;Aeq.txt&quot;);$Ine=new Matrix&lt;Rational&gt;(&lt;INPUT1&gt;);$Aeq=new Matrix&lt;Rational&gt;(&lt;INPUT2&gt;); print $Ine;print $Aeq;$p=new Polytope&lt;Rational&gt;(INEQUALITIES=&gt;$Ine,EQUATIONS=&gt;$Aeq);
+</pre></div>
+</div>
+<p>读lp文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$f=lp2poly(&#39;conv.lp&#39;);$p = new Polytope&lt;Rational&gt;($f);$s=new Polytope(POINTS=&gt;$p-&gt;LATTICE_POINTS, COORDINATE_LABELS=&gt;$p-&gt;COORDINATE_LABELS);print_constraints($s);
+</pre></div>
+</div>
+<p>求无界多面体（注意$pin-&gt;DIM+<strong>1</strong> 维数, 要等于变量数+1）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$f = lp2poly(&#39;example.lp&#39;);$pin = new Polytope&lt;Rational&gt;($f);$rays = $pin-&gt;VERTICES-&gt;minor($pin-&gt;FAR_FACE, All);$zero = unit_vector&lt;Rational&gt;($pin-&gt;DIM + 1, 0);$B = new Polytope&lt;Rational&gt;(POINTS=&gt;$zero);
+
+foreach my $r (@$rays) { $M = new Matrix&lt;Rational&gt;(primitive($r));$M-&gt;[0]-&gt;[0] = 1;$M = $M / $zero;$ptemp = new Polytope&lt;Rational&gt;(POINTS=&gt;$M);$B = minkowski_sum($B, $ptemp); }
+
+$Qpoints = $pin-&gt;VERTICES-&gt;minor($pin-&gt;BOUNDED_VERTICES, All);$Q = new Polytope&lt;Rational&gt;(POINTS=&gt;$Qpoints);$p = minkowski_sum($Q, $B);
+
+$latticemat = new Matrix&lt;Rational&gt;($p-&gt;LATTICE_POINTS);$newpoints = new Matrix&lt;Rational&gt;($latticemat / $rays);$q = new Polytope(POINTS=&gt;$newpoints, COORDINATE_LABELS=&gt;$pin-&gt;COORDINATE_LABELS);print_constraints($q);
+</pre></div>
+</div>
+<p>读取文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;facet.txt&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>利用 julia 可以使用文件polymake</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testPolymake</span><span class="o">.</span><span class="n">jl</span>
+</pre></div>
+</div>
+<p>=====================================</p>
+</section>
+<section id="matlab">
+<h1>11 MATLAB<a class="headerlink" href="#matlab" title="Link to this heading">¶</a></h1>
+<p>从ubuntu 与 matlab 之间拷贝文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">./</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">xiaozhou</span><span class="o">/../../../</span><span class="n">mnt</span><span class="o">/</span><span class="n">e</span><span class="o">/</span><span class="n">matlab</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">allfiles</span><span class="o">/</span>        <span class="n">传到matlab</span>
+<span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">xiaozhou</span><span class="o">/../../../</span><span class="n">mnt</span><span class="o">/</span><span class="n">e</span><span class="o">/</span><span class="n">matlab</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">allfiles</span><span class="o">/&lt;&gt;</span> <span class="o">./</span>		<span class="n">传到ubuntu</span>
+</pre></div>
+</div>
+<p>整体缩进：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ctrl</span> <span class="o">+</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>命令行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">Aeq</span><span class="o">*</span><span class="n">X</span><span class="s1">&#39;~=0))</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">X</span><span class="s1">&#39;&gt;1))</span>
+</pre></div>
+</div>
+<p>只保留矩阵第一列的数据：FA（:,1）=[];</p>
+<p>去掉矩阵中的全0行:  a(all(a==0,2),:) = [];</p>
+<p>去掉矩阵中的全0列:  a(:,all(a==0,1)) = [];</p>
+<p>找出矩阵的全零行：find(all(A==0,2))</p>
+<p>从数组中随机挑选n个数：A(randperm(numel(A),5))</p>
+<p>======================================</p>
+</section>
+<section id="excel">
+<h1>12 excel<a class="headerlink" href="#excel" title="Link to this heading">¶</a></h1>
+<p>按照已知的顺序排列：=VLOOKUP(D1,A:B,2,0)</p>
+<p>=============================</p>
+</section>
+<section id="linux">
+<h1>13 linux<a class="headerlink" href="#linux" title="Link to this heading">¶</a></h1>
+<p>在原文件后面新添内容:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./***</span> <span class="o">&gt;&gt;</span> <span class="n">file</span>
+</pre></div>
+</div>
+<p>把目录下的所有文件放入同一个文件内：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">*</span> <span class="o">&gt;</span> <span class="n">file</span>
+
+</pre></div>
+</div>
+<p>nohup命令后台执行shell脚本</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="o">./</span><span class="n">shell</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>查找文件：<a class="reference external" href="https://www.cnblogs.com/jiftle/p/9707518.html">linux find 命令查找文件和文件夹 - jiftle - 博客园 (cnblogs.com)</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>find -name &#39;filename&#39;
+locate filename
+
+查找文件夹：
+find . -type d -iname &quot;...&quot;
+</pre></div>
+</div>
+<p>==============================</p>
+</section>
+<section id="latex">
+<h1>14 Latex<a class="headerlink" href="#latex" title="Link to this heading">¶</a></h1>
+<p>上下标离字母太近或太远就使用 ;   比如</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">^</span><span class="p">{</span>\<span class="p">;</span><span class="n">k</span><span class="p">}</span><span class="n">_e</span>
+</pre></div>
+</div>
+<p><img alt="image-20211126192656565" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211126192656565.png" /></p>
+<p>==============================</p>
+</section>
+<section id="vs-code">
+<h1>15 VS code<a class="headerlink" href="#vs-code" title="Link to this heading">¶</a></h1>
+<ol class="arabic simple">
+<li><p>vscode + latex + 语法错误检查：<strong>TeX 插件</strong></p></li>
+<li><p>ubuntu 远程不能打开，是ubuntu本身的错，power shell 输入 netsh winsock reset</p></li>
+</ol>
+<p><img alt="1659843893835" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1659843893835.png" /></p>
+<ol class="arabic" start="3">
+<li><p>解决vscode 已配置ssh 但仍需输密码：</p>
+<p>cd .ssh
+chmod 700 ../
+chmod 700 .
+chmod 600 authorized_keys</p>
+<p>chmod g-w authorized_keys</p>
+<p><a class="reference external" href="https://blog.csdn.net/qq_19922839/article/details/117488663">(11条消息) SSH配置公钥后仍需要输入密码问题解析_ghimi的博客-CSDN博客_为什么配置了ssh还要输入密码</a></p>
+<p><a class="reference external" href="https://blog.csdn.net/u011489186/article/details/111469786">(11条消息) SSH免密登录配置后还是需要密码的问题解决_L_学无止境的博客-CSDN博客_ssh免密设置后仍然需要密码</a></p>
+</li>
+</ol>
+</section>
+<section id="gurobi">
+<h1>16 Gurobi<a class="headerlink" href="#gurobi" title="Link to this heading">¶</a></h1>
+<p>grbgetkey 80b3d968-a5e1-11ec-a5de-0242c0a81004</p>
+<p>grbgetkey c907a0c0-b6f6-11ec-95a2-0242ac120004             expire at 22-06-06</p>
+<p>linux 安装 gurobi：<a class="reference external" href="https://zhuanlan.zhihu.com/p/79524375">Linux下安装Gurobi - 知乎 (zhihu.com)</a></p>
+<p>问题：LoadError: Gurobi Error 10009: No Gurobi license found</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gurobi</span> <span class="n">官网申请</span> <span class="n">license</span>
+<span class="c1">#官网-&gt; Academic-&gt; request a license</span>
+<span class="n">在</span> <span class="nb">bin</span> <span class="n">目录下执行</span> <span class="n">获取的license</span>
+
+</pre></div>
+</div>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c">#22-12-09</span>
+<span class="c">#问题:</span>
+<span class="kt">LoadError</span><span class="o">:</span><span class="w"> </span><span class="n">Gurobi</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="mi">10009</span><span class="o">:</span><span class="w"> </span><span class="n">HostID</span><span class="w"> </span><span class="n">mismatch</span><span class="w"> </span><span class="p">(</span><span class="n">licensed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">5</span><span class="n">d3d09d7</span><span class="p">,</span><span class="w"> </span><span class="n">hostid</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="mi">5</span><span class="n">dcc7d5c</span><span class="p">)</span>
+<span class="c">#原因：Licence Manage hostid (lmhostid)</span>
+
+<span class="c">#命令行执行</span>
+<span class="n">ifconfig</span>
+<span class="c"># eth0 中找到 ether, 核对后面的地址与“5dcc7d5c”是否一致</span>
+<span class="c">#若一致，则</span>
+<span class="c">#更改mac地址 </span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">dev</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">down</span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">dev</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mi">00</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">5</span><span class="n">d</span><span class="o">:</span><span class="mi">3</span><span class="n">d</span><span class="o">:</span><span class="mi">09</span><span class="o">:</span><span class="n">d7</span><span class="w"> </span><span class="c"># or any address, which will be fixed. 保持与license中的id一致</span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">dev</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">up</span>
+<span class="c">#参考：https://github.com/microsoft/WSL/issues/5352</span>
+</pre></div>
+</div>
+<p>Gurobi 需要生成新的 libgurobi_c++.a 才能有完整的接口功能（应该为 API（Application Programming Interface）【应用程序接口】重新编译c++库，并替换旧的库，以解决任何 ABI 【应用程序二进制接口】(Application Binary Interface) 不兼容的问题），步骤如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="n">cd</span> <span class="n">gurobi950</span><span class="o">/</span><span class="n">linux64</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">build</span>
+<span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="n">make</span>
+<span class="p">(</span><span class="n">iii</span><span class="p">)</span> <span class="n">cp</span> <span class="n">libgurobi_c</span><span class="o">++.</span><span class="n">a</span> <span class="o">../../</span><span class="n">lib</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="scip">
+<h1>17 SCIP<a class="headerlink" href="#scip" title="Link to this heading">¶</a></h1>
+<p>SCIP添加新求解问题目录：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>在目录 ~/SCIP/scipoptsuite-8.0.0/scip/examples/ 下新建求解问题目录：如ABC
+将 CMakeList.txt Makefile src 放到目录ABC下
+在 ~/SCIP/scipoptsuite-8.0.0/scip/examples/ 的 CMakeList.txt 中添加ABC
+转到目录 ~/SCIP/scipoptsuite-8.0.0/build 后执行 cmake .. 和 make -j
+在 ~/SCIP/scipoptsuite-8.0.0/build/scip/examples/ 下会自动出现目录ABC
+</pre></div>
+</div>
+<p>SCIP添加debug目录 :</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>cd ~/SCIP/scipoptsuite-8.0.0/
+scp -r ./build/ ./debug
+cd debug
+<span class="gh"># (optional) cmake . -DREADLINE=off -DIPOPT=off -DZIMPL=off -DGCG=off -DCMAKE_BUILD_TYPE=Debug -DNOBLKBUFMEM=off -DDEBUGSOL=on</span>
+cmake -DNOBLKBUFMEM=off ..
+</pre></div>
+</div>
+<p>SCIP进入debug模式：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Debug</span> <span class="o">..</span> <span class="o">-</span><span class="n">DNOBLKBUFMEM</span><span class="o">=</span><span class="n">off</span>
+</pre></div>
+</div>
+<p>进入release模式:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>cmake -DCMAKE_BUILD_TYPE=Release .
+
+<span class="gh"># (optional) cmake . -DREADLINE=off -DIPOPT=off -DZIMPL=off -DGCG=off -DCMAKE_BUILD_TYPE=Release -DNOBLKBUFMEM=off -DDEBUGSOL=off</span>
+</pre></div>
+</div>
+<p>SCIP debug solution 步骤:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="n">根据生成的执行文件进入交互模式</span> <span class="o">-&gt;</span> <span class="n">read</span> <span class="o">-&gt;</span> <span class="n">传入数据文件路径</span> <span class="o">-&gt;</span> <span class="n">opt</span> <span class="o">-&gt;</span> <span class="n">write</span> <span class="o">-&gt;</span> <span class="n">sol</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="o">.</span><span class="n">sol</span> <span class="p">(</span><span class="n">正确解文件</span><span class="p">)</span>
+    <span class="mi">2</span> <span class="n">debug</span> <span class="n">模式下</span><span class="p">:</span> <span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DDEBUGSOL</span><span class="o">=</span><span class="n">on</span> <span class="p">(</span><span class="n">off</span><span class="p">)</span>  
+<span class="mi">3</span> <span class="n">打开错误问题的设置</span><span class="p">(</span><span class="n">如</span><span class="p">:</span> <span class="n">propagator等</span><span class="p">)</span>
+<span class="mi">4</span> <span class="n">在对应的目录下</span> <span class="n">make</span> <span class="o">-</span><span class="n">j</span>
+<span class="mi">5</span> <span class="n">根据生成的执行文件进入交互模式</span> <span class="o">-&gt;</span> <span class="nb">set</span> <span class="o">-&gt;</span> <span class="n">misc</span> <span class="o">-&gt;</span> <span class="n">debugsol</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="o">.</span><span class="n">sol</span> <span class="o">-&gt;</span> <span class="n">read</span> <span class="o">-&gt;</span> <span class="n">传入数据文件路径</span> <span class="o">-&gt;</span> <span class="n">opt</span> <span class="p">(</span><span class="n">后续会显示冲突</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>SCIP 将文件移至debug下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">xiaozhou</span><span class="o">/</span><span class="n">SCIP</span><span class="o">/</span><span class="n">scipoptsuite</span><span class="o">-</span><span class="mf">8.0.0</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">scip</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">unsplit</span><span class="o">/</span>
+<span class="n">mv</span> <span class="o">&lt;&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">xiaozhou</span><span class="o">/</span><span class="n">SCIP</span><span class="o">/</span><span class="n">scipoptsuite</span><span class="o">-</span><span class="mf">8.0.0</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">scip</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">unsplit</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>SCIP 输出预处理后的文件步骤：
+进入交互模式  -&gt;  read (输入数据文件)  -&gt; presolve -&gt; write -&gt; transproblem (文件名)</p>
+<p><strong>SCIP 参数：</strong></p>
+<p>设置关闭割平面：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>关掉所有：set/separating/emphasis off 
+
+set -&gt; separating -&gt; &lt;cutname&gt; -&gt; freq : -1
+#例如关闭背包割：set -&gt; separating -&gt; knapsackcover -&gt; freq : -1
+#设置完成提示： separating/knapsackcover/freq = -1
+</pre></div>
+</div>
+<p>设置只求到根节点：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-&gt;</span> <span class="n">limits</span> <span class="o">-&gt;</span> <span class="n">totalnodes</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="c1">#设置完成提示： limits/totalnodes = 1</span>
+</pre></div>
+</div>
+<p>将设置的参数写入文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-&gt;</span> <span class="n">diffsave</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;.</span><span class="n">set</span>
+</pre></div>
+</div>
+<p>关闭预处理：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">-&gt;</span> <span class="n">presolving</span> <span class="o">-&gt;</span> <span class="n">maxrounds</span> <span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>安装流程：<a class="reference external" href="https://www.scipopt.org/doc-7.0.3/html/INSTALL_8md_source.php">SCIP Doxygen Documentation: INSTALL.md Source File (scipopt.org)</a></p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="n">xvzf</span><span class="w"> </span><span class="n">scipoptsuite</span><span class="o">-</span><span class="mf">8.0.0</span><span class="o">.</span><span class="n">tgz</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">scipoptsuite</span><span class="o">-</span><span class="mf">8.0.0</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="n">build</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">build</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">cmake</span><span class="w"> </span><span class="o">..</span>
+<span class="c"># 报错：Could NOT find Readline (missing: Readline_INCLUDE_DIR Readline_LIBRARY)</span>
+<span class="c"># 解决：sudo apt-get install libreadline-dev</span>
+
+<span class="c"># 报错：Could NOT find IPOPT (missing: IPOPT_LIBRARIES) (Required is at least version &quot;3.12.0&quot;)</span>
+<span class="c"># 解决：https://github.com/coin-or/Ipopt</span>
+<span class="c">#	   https://coin-or.github.io/Ipopt/INSTALL.html</span>
+
+<span class="c"># 报错：Provided package HSL is not working or does not contain MA27</span>
+<span class="c"># 解决：需要下载 HSL 包,见下图</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">make</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">check</span>
+<span class="c"># 报错：Exception message: libhsl.so: cannot open shared object file: No such file or directory</span>
+<span class="c"># 解决：https://blog.csdn.net/weixin_42268975/article/details/107708414</span>
+<span class="c">#      以及见下图</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">install</span>
+</pre></div>
+</div>
+<p><img alt="image-20220424153422612" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220424153422612.png" /></p>
+<p>问题报错：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Assertion `chkmem-&gt;lazyfreesize == 0&#39; failed.
+<span class="gh"># 将 SCIPallocBlockMemory 换成 SCIPallocBuffer</span>
+
+<span class="gh">#不要在debug检查内存时打开debugsol </span>
+
+assert (getNusedMemory-&gt;Buffer == 0) failed
+<span class="gh"># Buffer 改为 BlockMemory</span>
+
+corrupted size vs. prev_size 
+realloc(): invalid next size:
+malloc(): memory corruption
+malloc(): smallbin double linked list corrupted
+segment fault
+free(): corrupted unsorted chunks
+malloc(): memory corruption (fast)
+<span class="gh"># 以上错误大概率由&lt;数组越界&gt;引起</span>
+<span class="gh"># 参考链接：https://rushanshi.blog.csdn.net/article/details/122479455</span>
+</pre></div>
+</div>
+<p>编译cmake报错：</p>
+<p><img alt="1658911307908" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1658911307908.png" /></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh">#链接的g++版本不对，命令行设置 export CXX=/usr/bin/g++ 或 export CXX=/usr/local/bin/g++</span>
+参考链接: https://blog.csdn.net/fpcc/article/details/102664881
+</pre></div>
+</div>
+<p>warning: constraint handler &lt;…&gt; cannot print requested format</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># This happens because you are trying to write your problem into a format that doesn&#39;t necessarily supports the type of constraints your constraint handler generates.</span>
+http://listserv.zib.de/pipermail/scip/2016-April/002794.html
+</pre></div>
+</div>
+<p>==================================================</p>
+</section>
+<section id="gcc">
+<h1>18 GCC<a class="headerlink" href="#gcc" title="Link to this heading">¶</a></h1>
+<p>../configure –prefix=/usr/local/gcc-10.2.0/ –enable-checking=release –enable-languages=c,c++ –disable-multilib</p>
+<p><strong>编译报错</strong></p>
+<ol class="arabic simple">
+<li><p>undefined reference to `MCFDRReadData(std::__cxx11::basic_string&lt;char, std::char_traits<char>, std::allocator<char> &gt;, std::__cxx11::basic_string&lt;char, std::char_traits<char>, std::allocator<char> &gt;)’
+collect2: error: ld returned 1 exit status</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">执行命令加上</span> <span class="o">-</span><span class="n">D_GLIBCXX_USE_CXX11_ABI</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>undefined reference to `MCFDRReadData(std::string, std::string)’ collect2: error: ld returned 1 exit status</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+<li><p>c++17 须使用g++10.0.0以上版本编译</p>
+<p>升级g++: https://code.bytecho.net/d/152</p>
+</li>
+<li><p>undefined reference to xxx</p>
+<p><img alt="1680488322575" src="C:%5CUsers%5C15092%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1680488322575.png" /></p>
+<p>原因是构造函数后面要加 “= default();”</p>
+</li>
+</ol>
+<p>=====================================================</p>
+</section>
+<section id="c">
+<h1>19 c++<a class="headerlink" href="#c" title="Link to this heading">¶</a></h1>
+<p>编译报错：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>&quot;vector&quot;does not name a type
+<span class="gh"># #include &lt;vector&gt;</span>
+<span class="gh"># using std::vector</span>
+</pre></div>
+</div>
+</section>
+<section id="xshell">
+<h1>20 Xshell<a class="headerlink" href="#xshell" title="Link to this heading">¶</a></h1>
+<p>xftp 传输文件出错 ： 磁盘内存不够，du -sh * 查看内存空间，删除内存大的文件（如core）</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<section id="id14">
+<h2><a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+<section id="cmake">
+<h1>21 CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h1>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>CMake Error in CMakeLists.txt:
+  Target &quot;runMCFDR&quot; requires the language dialect &quot;CXX17&quot; (with compiler
+  extensions), but CMake does not know the compile flags to use to enable it.
+<span class="gh"># 解决：编译时用 cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/g++ </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>debug 模式： -DCMAKE_BUILD_TYPE=Debug</p></li>
+</ol>
+</section>
+<section id="julia">
+<h1>22 Julia<a class="headerlink" href="#julia" title="Link to this heading">¶</a></h1>
+<p>julia 安装 cplex</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span>
+<span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;CPLEX_STUDIO_BINARIES&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Applications/CPLEX_Studio221/cplex/bin/x86-64_osx/&quot;</span>
+<span class="k">import</span><span class="w"> </span><span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;CPLEX&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;CPLEX&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mac julia 安装 cplex 报错：ERROR: LoadError: Unable to install CPLEX.jl.</p>
+<p>解决方案：https://discourse.julialang.org/t/problem-installing-cplex-jl-with-cplex-22-1-1-on-mac-os/111967/10</p>
+<p>![image-20240504155347826](/Users/seanxiao/Library/Application Support/typora-user-images/image-20240504155347826.png)</p>
+<ol class="arabic simple">
+<li><p>julia 建模不要用等式，数值问题太多！！</p></li>
+</ol>
+</section>
+<section id="python">
+<h1>23 Python<a class="headerlink" href="#python" title="Link to this heading">¶</a></h1>
+<ol class="arabic">
+<li><p>不输出warning 内容</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Sean
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
