@@ -1,12 +1,10 @@
 Linux
 ===============================
 
-Linux 配置
-*******************************
 
 
 Linux 命令行
-*******************************
+-------------------------------
 
 重命名/移动文件: 
 
@@ -106,6 +104,12 @@ C++ 执行命令:
     sudo apt-get install net-tools
     ifconfig
     
+查看进程 
+
+.. code-block:: bash
+    
+    bjobs
+
 查看进程状态
 
 .. code-block:: bash
@@ -118,6 +122,44 @@ C++ 执行命令:
 
     ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
 
+结束进程
+
+.. code-block:: bash 
+
+    #结束所有任务
+    ./killall
+    #结束指定任务
+    bkill [JobID]
+
+检查容量
+
+.. code-block:: bash
+    
+    du -sh *
+
+后台运行
+
+.. code-block:: bash
+    
+    ./run.sh &
+
+删除 core
+
+.. code-block:: bash
+    
+    # check 目录下: 
+    nohup ./rmcore.sh &
+
+
+统计文件中重复字符串出现的次数: 
+
+.. code-block:: bash
+    
+    grep -o '字符串' file |wc -l
+
+
+
+
 
 
 
@@ -125,7 +167,7 @@ Vim
 ===============================
 
 Vim 配置
-*******************************
+-------------------------------
 
 主要是配置 .vimrc 文件，具体如下:
 
@@ -143,7 +185,7 @@ Vim 配置
     # inoremap " ""<Esc>i
 
 Vim 命令
-*******************************
+-------------------------------
 
 - 命令模式
 
@@ -278,7 +320,7 @@ Git
 ===============================
 
 Git 初始化
-*******************************
+-------------------------------
 
 安装 git
 
@@ -328,7 +370,7 @@ Git 初始化
 
 
 git 命令
-*******************************
+-------------------------------
 
 查看分支
 
@@ -854,46 +896,6 @@ g++ 或 make 编译不成功:
     1r0i@1maQV
 
 
-结束进程
-
-.. code-block:: bash 
-
-    #结束所有任务
-    ./killall
-    #结束指定任务
-    bkill [JobID]
-
-检查容量
-
-.. code-block:: bash
-    
-    du -sh *
-
-后台运行
-
-.. code-block:: bash
-    
-    ./run.sh &
-
-删除 core
-
-.. code-block:: bash
-    
-    # check 目录下: 
-    nohup ./rmcore.sh &
-
-
-统计文件中重复字符串出现的次数: 
-
-.. code-block:: bash
-    
-    grep -o '字符串' file |wc -l
-
-查看进程 
-
-.. code-block:: bash
-    
-    bjobs
 
 
 
@@ -1124,7 +1126,15 @@ VS code
 
 vscode + latex + 语法错误检查: **TeX 插件**
 
-解决vscode 已配置 ssh 但仍需输密码: 
+VS code 设置背景为黑色:
+
+.. code-block:: bash
+    
+    "workbench.colorCustomizations": {
+        "editor.background": "#000000"
+    }
+
+解决 vscode 已配置 ssh 但仍需输密码: 
 
 .. code-block:: bash
     
@@ -1139,6 +1149,8 @@ vscode + latex + 语法错误检查: **TeX 插件**
    [(11条消息) SSH免密登录配置后还是需要密码的问题解决_L_学无止境的博客-CSDN博客_ssh免密设置后仍然需要密码](https://blog.csdn.net/u011489186/article/details/111469786)
 
    
+
+
 
 
 

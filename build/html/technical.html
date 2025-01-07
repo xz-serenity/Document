@@ -205,13 +205,13 @@
 <li class="toctree-l1"><a class="reference internal" href="#shell">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#awk">AWK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#cmip">CMIP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id7">大集群</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id8">小集群</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id6">大集群</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id7">小集群</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#cplex">CPLEX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#polymake">Polymake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#matlab">MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#excel">Excel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id9">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id8">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#vs-code">VS code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#gurobi">Gurobi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#scip">SCIP</a></li>
@@ -264,10 +264,7 @@
           <section id="linux">
 <h1>Linux<a class="headerlink" href="#linux" title="Link to this heading">¶</a></h1>
 <section id="id1">
-<h2>Linux 配置<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
-</section>
-<section id="id2">
-<h2>Linux 命令行<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<h2>Linux 命令行<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <p>重命名/移动文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span><span class="o">[</span>oldfile<span class="o">]</span><span class="w"> </span><span class="o">[</span>newfile<span class="o">]</span>
 </pre></div>
@@ -344,6 +341,10 @@ netsh<span class="w"> </span>winsock<span class="w"> </span>reset
 ifconfig
 </pre></div>
 </div>
+<p>查看进程</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bjobs
+</pre></div>
+</div>
 <p>查看进程状态</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span>
 </pre></div>
@@ -352,12 +353,36 @@ ifconfig
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;suzhaogang&quot; {print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
 </pre></div>
 </div>
+<p>结束进程</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#结束所有任务</span>
+./killall
+<span class="c1">#结束指定任务</span>
+bkill<span class="w"> </span><span class="o">[</span>JobID<span class="o">]</span>
+</pre></div>
+</div>
+<p>检查容量</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-sh<span class="w"> </span>*
+</pre></div>
+</div>
+<p>后台运行</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>删除 core</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check 目录下:</span>
+nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>统计文件中重复字符串出现的次数:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;字符串&#39;</span><span class="w"> </span>file<span class="w"> </span><span class="p">|</span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
 </section>
 </section>
 <section id="vim">
 <h1>Vim<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h1>
-<section id="id3">
-<h2>Vim 配置<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<section id="id2">
+<h2>Vim 配置<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <p>主要是配置 .vimrc 文件，具体如下:</p>
 <ol class="arabic simple">
 <li><p>设置ctags: &lt;<a class="reference external" href="https://blog.csdn.net/qq_29350001/article/details/77162347">https://blog.csdn.net/qq_29350001/article/details/77162347</a>&gt;</p></li>
@@ -372,8 +397,8 @@ ifconfig
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h2>Vim 命令<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h2>Vim 命令<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>命令模式</p></li>
 </ul>
@@ -520,8 +545,8 @@ ifconfig
 </section>
 <section id="git">
 <h1>Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h1>
-<section id="id5">
-<h2>Git 初始化<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h2>Git 初始化<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <p>安装 git</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git
 </pre></div>
@@ -558,8 +583,8 @@ git<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>fi
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h2>git 命令<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h2>git 命令<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <p>查看分支</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
 </pre></div>
@@ -919,8 +944,8 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h1>大集群<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h1>
+<section id="id6">
+<h1>大集群<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h1>
 <p>大集群 IP 为 10.4.3.17</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>suzhaogang
 SuZhaoGang@2021
@@ -935,37 +960,9 @@ zhangyuhang
 1r0i@1maQV
 </pre></div>
 </div>
-<p>结束进程</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#结束所有任务</span>
-./killall
-<span class="c1">#结束指定任务</span>
-bkill<span class="w"> </span><span class="o">[</span>JobID<span class="o">]</span>
-</pre></div>
-</div>
-<p>检查容量</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-sh<span class="w"> </span>*
-</pre></div>
-</div>
-<p>后台运行</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh<span class="w"> </span><span class="p">&amp;</span>
-</pre></div>
-</div>
-<p>删除 core</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check 目录下:</span>
-nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">&amp;</span>
-</pre></div>
-</div>
-<p>统计文件中重复字符串出现的次数:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;字符串&#39;</span><span class="w"> </span>file<span class="w"> </span><span class="p">|</span>wc<span class="w"> </span>-l
-</pre></div>
-</div>
-<p>查看进程</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bjobs
-</pre></div>
-</div>
 </section>
-<section id="id8">
-<h1>小集群<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h1>
+<section id="id7">
+<h1>小集群<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h1>
 <p>小集群 IP 为: 10.1.20.53</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>账号:<span class="w"> </span>xiaozhou
 密码:<span class="w"> </span>xz2022
@@ -1077,8 +1074,8 @@ foreach<span class="w"> </span>my<span class="w"> </span><span class="nv">$r</sp
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h1>Linux<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h1>
+<section id="id8">
+<h1>Linux<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h1>
 <p>在原文件后面新添内容</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>./*<span class="w"> </span>&gt;&gt;<span class="w"> </span>file
 </pre></div>
@@ -1101,7 +1098,13 @@ locate<span class="w"> </span>filename
 <section id="vs-code">
 <h1>VS code<a class="headerlink" href="#vs-code" title="Link to this heading">¶</a></h1>
 <p>vscode + latex + 语法错误检查: <strong>TeX 插件</strong></p>
-<p>解决vscode 已配置 ssh 但仍需输密码:</p>
+<p>VS code 设置背景为黑色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;workbench.colorCustomizations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;editor.background&quot;</span>:<span class="w"> </span><span class="s2">&quot;#000000&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>解决 vscode 已配置 ssh 但仍需输密码:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.ssh
 <span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>../
 <span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>.
@@ -1418,30 +1421,29 @@ warnings.simplefilter<span class="o">(</span><span class="nv">action</span><span
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Linux</a><ul>
-<li><a class="reference internal" href="#id1">Linux 配置</a></li>
-<li><a class="reference internal" href="#id2">Linux 命令行</a></li>
+<li><a class="reference internal" href="#id1">Linux 命令行</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vim">Vim</a><ul>
-<li><a class="reference internal" href="#id3">Vim 配置</a></li>
-<li><a class="reference internal" href="#id4">Vim 命令</a></li>
+<li><a class="reference internal" href="#id2">Vim 配置</a></li>
+<li><a class="reference internal" href="#id3">Vim 命令</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#git">Git</a><ul>
-<li><a class="reference internal" href="#id5">Git 初始化</a></li>
-<li><a class="reference internal" href="#id6">git 命令</a></li>
+<li><a class="reference internal" href="#id4">Git 初始化</a></li>
+<li><a class="reference internal" href="#id5">git 命令</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#shell">Shell</a></li>
 <li><a class="reference internal" href="#awk">AWK</a></li>
 <li><a class="reference internal" href="#cmip">CMIP</a></li>
-<li><a class="reference internal" href="#id7">大集群</a></li>
-<li><a class="reference internal" href="#id8">小集群</a></li>
+<li><a class="reference internal" href="#id6">大集群</a></li>
+<li><a class="reference internal" href="#id7">小集群</a></li>
 <li><a class="reference internal" href="#cplex">CPLEX</a></li>
 <li><a class="reference internal" href="#polymake">Polymake</a></li>
 <li><a class="reference internal" href="#matlab">MATLAB</a></li>
 <li><a class="reference internal" href="#excel">Excel</a></li>
-<li><a class="reference internal" href="#id9">Linux</a></li>
+<li><a class="reference internal" href="#id8">Linux</a></li>
 <li><a class="reference internal" href="#vs-code">VS code</a></li>
 <li><a class="reference internal" href="#gurobi">Gurobi</a></li>
 <li><a class="reference internal" href="#scip">SCIP</a></li>
