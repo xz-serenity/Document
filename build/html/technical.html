@@ -221,6 +221,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#cmake">CMake</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#julia">Julia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mysql">MySQL</a></li>
 </ul>
 
 </div>
@@ -383,7 +384,7 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 <h1>Vim<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h1>
 <section id="id2">
 <h2>Vim 配置<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
-<p>主要是配置 .vimrc 文件，具体如下:</p>
+<p>主要是配置 .vimrc 文件, 具体如下:</p>
 <ol class="arabic simple">
 <li><p>设置ctags: &lt;<a class="reference external" href="https://blog.csdn.net/qq_29350001/article/details/77162347">https://blog.csdn.net/qq_29350001/article/details/77162347</a>&gt;</p></li>
 <li><p>自动补全括号</p></li>
@@ -449,11 +450,11 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 <li><p>M: 光标移动到这个屏幕的中央那一行的第一个字符</p></li>
 <li><p>L: 光标移动到这个屏幕的最下方那一行的第一个字符</p></li>
 <li><p>G: 移动到这个档案的最后一行 (常用)</p></li>
-<li><p>nG: n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行</p></li>
+<li><p>nG: n 为数字.移动到这个档案的第 n 行.例如 20G 则会移动到这个档案的第 20 行</p></li>
 <li><p>gg: 移动到这个档案的第一行, 相当于 1G 啊！ (常用)</p></li>
 <li><p>n&lt;Enter&gt;: 光标向下移动 n 行 (常用)</p></li>
 <li><p>/[word]: 向光标之下寻找一个名称为 word 的字符串</p></li>
-<li><p>?[word]: 向光标之上寻找一个字符串名称为 word 的字符串。</p></li>
+<li><p>?[word]: 向光标之上寻找一个字符串名称为 word 的字符串.</p></li>
 <li><p>n: 重复前一个搜寻的动作</p></li>
 <li><p><em>:[n1],[n2]s/[word1]/[word2]/g</em>: 在第 n1 与 n2 行之间寻找 word1 这个字符串, 并将该字符串取代为 word2</p></li>
 <li><p><em>:1,$s/word1/word2/g</em> 或 <em>:%s/word1/word2/g</em>: 从第一行到最后一行寻找 word1 字符串, 并将该字符串取代为 word2!</p></li>
@@ -477,7 +478,7 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 <li><p>c: 重复删除多个数据, 例如向下删除 10 行 [ 10cj ]</p></li>
 <li><p>u: 复原前一个动作</p></li>
 <li><p>Ctrl+r: 重做上一个动作</p></li>
-<li><p>.: 不要怀疑！这就是小数点！意思是重复前一个动作的意思。 如果你想要重复删除、重复贴上等等动作, 按下小数点就好了</p></li>
+<li><p>.: 不要怀疑！这就是小数点！意思是重复前一个动作的意思. 如果你想要重复删除、重复贴上等等动作, 按下小数点就好了</p></li>
 <li><p>ma: 在该行打上标记 a</p></li>
 <li><p>‘a: 移动到标记a处</p></li>
 <li><p>‘A: 用大写打标记不会因为退出而更改</p></li>
@@ -509,7 +510,7 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 <li><p>:q!  若曾修改过档案, 又不想储存, 使用 ! 为强制离开不储存档案</p></li>
 <li><p>:wq  储存后离开, 若为 :wq! 则为强制储存后离开 (常用)</p></li>
 <li><p>ZZ   如果修改过, 保存当前文件, 然后退出！效果等同于(保存并退出)</p></li>
-<li><p>ZQ   不保存, 强制退出。效果等同于 :q!</p></li>
+<li><p>ZQ   不保存, 强制退出.效果等同于 :q!</p></li>
 <li><dl class="field-list simple">
 <dt class="field-odd">w [filename]<span class="colon">:</span></dt>
 <dd class="field-odd"><p>将编辑的数据储存成另一个档案 (类似另存新档)</p>
@@ -518,13 +519,13 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 </li>
 <li><dl class="field-list simple">
 <dt class="field-odd">r [filename]<span class="colon">:</span></dt>
-<dd class="field-odd"><p>在编辑的数据中, 读入另一个档案的数据。亦即将 [filename] 这个档案内容加到游标所在行后面</p>
+<dd class="field-odd"><p>在编辑的数据中, 读入另一个档案的数据.亦即将 [filename] 这个档案内容加到游标所在行后面</p>
 </dd>
 </dl>
 </li>
 <li><dl class="field-list simple">
 <dt class="field-odd">n1,n2 w [filename]<span class="colon">:</span></dt>
-<dd class="field-odd"><p>将 n1 到 n2 的内容储存成 filename 这个档案。</p>
+<dd class="field-odd"><p>将 n1 到 n2 的内容储存成 filename 这个档案.</p>
 </dd>
 </dl>
 </li>
@@ -740,7 +741,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>awk 字符串转数字: 只需要将变量通过”+”连接运算。自动强制将字符串转为整型。非数字变成0, 发现第一个非数字字符, 后面自动忽略。</p>
+<p>awk 字符串转数字: 只需要将变量通过”+”连接运算.自动强制将字符串转为整型.非数字变成0, 发现第一个非数字字符, 后面自动忽略.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk<span class="w"> </span><span class="s1">&#39;BEGIN{a=&quot;a&quot;;b=&quot;b&quot;;print (a+b+0);}&#39;</span>
 </pre></div>
 </div>
@@ -1372,6 +1373,36 @@ warnings.simplefilter<span class="o">(</span><span class="nv">action</span><span
 </pre></div>
 </div>
 </section>
+<section id="mysql">
+<h1>MySQL<a class="headerlink" href="#mysql" title="Link to this heading">¶</a></h1>
+<p>在 MySQL Workbench 中, 可以通过以下步骤创建数据库并将 paparams.sql 文件导入到该数据库中:</p>
+<p><strong>步骤 1: 打开 MySQL Workbench 并连接到 MySQL 服务器</strong></p>
+<ul class="simple">
+<li><p>点击主界面上的一个连接, 输入您的用户名和密码, 登录到 MySQL 服务器.</p></li>
+</ul>
+<p><strong>步骤 2: 创建一个新数据库</strong></p>
+<ul class="simple">
+<li><p>在顶部工具栏, 点击 <em>File -&gt; New Query Tab</em>, 打开一个新的 SQL 查询窗口.</p></li>
+<li><p>在查询窗口中输入以下 SQL 语句来创建一个新的数据库 (例如, 命名为 my_database), 并运行该命令</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>my_database<span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>点击窗口上方的 <strong>闪电图标(Execute)</strong> 按钮, 执行上述语句</p></li>
+<li><p>刷新数据库列表: 在左侧的 <em>SCHEMAS</em> 面板中, 右键点击空白处, 然后选择 <em>Refresh All</em></p></li>
+</ul>
+<p><strong>步骤 3: 将 paparams.sql 文件导入到数据库中</strong></p>
+<ul class="simple">
+<li><p>选择目标数据库: 在左侧 <em>SCHEMAS</em> 面板中, 右键点击您刚创建的数据库 my_database, 然后选择 <em>Set as Default Schema</em>.</p></li>
+<li><p>开始导入文件: 点击菜单栏上的 <em>Server -&gt; Data Import</em></p></li>
+<li><p>设置导入选项: 在导入窗口中, 选择 <em>Import from Self-Contained File</em></p></li>
+<li><p>点击右侧的文件选择按钮, 找到您的 paparams.sql 文件.</p></li>
+<li><p>选择目标数据库: 在 <em>Default Target Schema</em> 下拉框中选择 my_database</p></li>
+<li><p>执行导入: 点击右下角的 <em>Start Import</em> 按钮, MySQL Workbench 会开始导入 paparams.sql 文件中的数据</p></li>
+<li><p>验证导入是否成功: 导入完成后, 您可以刷新 <em>SCHEMAS</em> 面板, 然后展开 my_database, 查看导入的表和数据是否正确</p></li>
+</ul>
+</section>
 
         </article>
       </div>
@@ -1453,6 +1484,7 @@ warnings.simplefilter<span class="o">(</span><span class="nv">action</span><span
 <li><a class="reference internal" href="#cmake">CMake</a></li>
 <li><a class="reference internal" href="#julia">Julia</a></li>
 <li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#mysql">MySQL</a></li>
 </ul>
 
           </div>
