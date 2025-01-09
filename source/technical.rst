@@ -1527,7 +1527,7 @@ Python
 
 不输出warning 内容
 
-.. code-block:: bash
+.. code-block:: python
     
     import warnings
     warnings.simplefilter(action='ignore', category=FutureWarning)
