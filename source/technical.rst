@@ -1547,6 +1547,12 @@ Python
 MySQL
 ===============================
 
+安装 MySQL 软件:
+
+下载 MySQL Server: <https://dev.mysql.com/downloads/mysql/>
+下载 MySQL Workbench: <https://dev.mysql.com/downloads/workbench/>
+
+
 在 MySQL Workbench 中, 可以通过以下步骤创建数据库并将 paparams.sql 文件导入到该数据库中:
 
 **步骤 1: 打开 MySQL Workbench 并连接到 MySQL 服务器**
