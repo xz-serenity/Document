@@ -121,6 +121,7 @@ C++ 执行命令:
 .. code-block:: bash
 
     ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+    ps -aux | grep "" | awk '$1=="xiaozhou" {print $2}' | xargs kill -9
 
 结束进程
 
