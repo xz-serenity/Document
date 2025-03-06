@@ -351,8 +351,12 @@ ifconfig
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span>
 </pre></div>
 </div>
-<p>杀死所有进程</p>
+<p>杀死所有进程 (大集群)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;suzhaogang&quot; {print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
+</pre></div>
+</div>
+<p>杀死所有进程 (小集群)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;xiaozhou&quot; {print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
 </pre></div>
 </div>
 <p>结束进程</p>
@@ -674,8 +678,16 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </section>
 <section id="shell">
 <h1>Shell<a class="headerlink" href="#shell" title="Link to this heading">¶</a></h1>
-<p>文件添加执行权限:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="o">[</span>文件名<span class="o">]</span>
+<p>文件(夹)添加权限:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看权限</span>
+ls<span class="w"> </span>-l<span class="w"> </span><span class="o">[</span>文件名<span class="o">]</span>
+<span class="c1"># u (用户), g (组), o (其他人), a (所有人)</span>
+<span class="c1"># + (添加权限)，- (移除权限)，= (设置为指定权限)</span>
+<span class="c1"># r (读)，w (写)，x (执行)</span>
+<span class="c1"># 执行权限</span>
+chmod<span class="w"> </span>+x<span class="w"> </span><span class="o">[</span>文件名<span class="o">]</span>
+<span class="c1"># 将其他人的权限设置为只读</span>
+chmod<span class="w"> </span><span class="nv">o</span><span class="o">=</span>r<span class="w"> </span>filename
 </pre></div>
 </div>
 <p>统计当前目录下文件数量:</p>
@@ -1376,6 +1388,9 @@ https://discourse.julialang.org/t/problem-installing-cplex-jl-with-cplex-22-1-1-
 </section>
 <section id="mysql">
 <h1>MySQL<a class="headerlink" href="#mysql" title="Link to this heading">¶</a></h1>
+<p>安装 MySQL 软件:</p>
+<p>下载 MySQL Server: &lt;<a class="reference external" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>&gt;
+下载 MySQL Workbench: &lt;<a class="reference external" href="https://dev.mysql.com/downloads/workbench/">https://dev.mysql.com/downloads/workbench/</a>&gt;</p>
 <p>在 MySQL Workbench 中, 可以通过以下步骤创建数据库并将 paparams.sql 文件导入到该数据库中:</p>
 <p><strong>步骤 1: 打开 MySQL Workbench 并连接到 MySQL 服务器</strong></p>
 <ul class="simple">

@@ -116,11 +116,16 @@ C++ 执行命令:
 
     ps -aux | grep "suzhaogang"
 
-杀死所有进程
+杀死所有进程 (大集群)
 
 .. code-block:: bash
 
     ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+
+杀死所有进程 (小集群)
+
+.. code-block:: bash
+    
     ps -aux | grep "" | awk '$1=="xiaozhou" {print $2}' | xargs kill -9
 
 结束进程

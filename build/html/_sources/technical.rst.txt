@@ -116,11 +116,17 @@ C++ 执行命令:
 
     ps -aux | grep "suzhaogang"
 
-杀死所有进程
+杀死所有进程 (大集群)
 
 .. code-block:: bash
 
     ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+
+杀死所有进程 (小集群)
+
+.. code-block:: bash
+    
+    ps -aux | grep "" | awk '$1=="xiaozhou" {print $2}' | xargs kill -9
 
 结束进程
 
@@ -499,12 +505,19 @@ git stash 回退:
 Shell
 ====================================================
 
-文件添加执行权限:
+文件(夹)添加权限:
 
 .. code-block:: bash
-
+    
+    # 查看权限
+    ls -l [文件名] 
+    # u (用户), g (组), o (其他人), a (所有人)
+    # + (添加权限)，- (移除权限)，= (设置为指定权限)
+    # r (读)，w (写)，x (执行)
+    # 执行权限
     chmod +x [文件名]
-
+    # 将其他人的权限设置为只读
+    chmod o=r filename   
 
 统计当前目录下文件数量: 
 
@@ -1539,6 +1552,12 @@ Python
 
 MySQL
 ===============================
+
+安装 MySQL 软件:
+
+下载 MySQL Server: <https://dev.mysql.com/downloads/mysql/>
+下载 MySQL Workbench: <https://dev.mysql.com/downloads/workbench/>
+
 
 在 MySQL Workbench 中, 可以通过以下步骤创建数据库并将 paparams.sql 文件导入到该数据库中:
 
