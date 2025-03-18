@@ -114,7 +114,7 @@ C++ 执行命令:
 
 .. code-block:: bash
 
-    ps -aux | grep "suzhaogang"
+    ps -aux | grep ""
 
 杀死所有进程 (大集群)
 
