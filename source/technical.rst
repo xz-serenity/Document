@@ -920,17 +920,24 @@ g++ 或 make 编译不成功:
 
 小集群 IP 为: 10.1.20.53
 
-.. code-block:: bash
-    
-    账号: xiaozhou
-    密码: xz2022
-
 外网请使用 vpn: <https://159.226.47.20/>
+
+小集群账号:
 
 .. code-block:: bash
 
     team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
     dyh@lsec.0621
+
+.. code-block:: bash
+    
+    xiaozhou
+    xz2022
 
     lvwei
     h#Z79DnjdC
