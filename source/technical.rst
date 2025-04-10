@@ -120,7 +120,7 @@ C++ 执行命令:
 
 .. code-block:: bash
 
-    ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+    ps -aux | grep "suzhao" | awk '$1=="suzhaog+" {print $2}' | xargs kill -9
 
 杀死所有进程 (小集群)
 
