@@ -934,6 +934,22 @@ g++ 或 make 编译不成功:
 
     dyh@lsec.0621
 
+[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
+
+登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
+
+小集群账号:
+
+.. code-block:: bash
+
+    team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
+    Dyh@lsec.0422
+
 .. code-block:: bash
     
     xiaozhou

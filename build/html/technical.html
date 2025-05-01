@@ -348,11 +348,11 @@ ifconfig
 </pre></div>
 </div>
 <p>查看进程状态</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 <p>杀死所有进程 (大集群)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhaogang&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;suzhaogang&quot; {print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;suzhao&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;suzhaog+&quot; {print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
 </pre></div>
 </div>
 <p>杀死所有进程 (小集群)</p>
@@ -484,7 +484,7 @@ nohup<span class="w"> </span>./rmcore.sh<span class="w"> </span><span class="p">
 <li><p>u: 复原前一个动作</p></li>
 <li><p>Ctrl+r: 重做上一个动作</p></li>
 <li><p>.: 不要怀疑！这就是小数点！意思是重复前一个动作的意思. 如果你想要重复删除、重复贴上等等动作, 按下小数点就好了</p></li>
-<li><p>ma: 在该行打上标记 a</p></li>
+<li><p>ma: 在该行打上标记  a</p></li>
 <li><p>‘a: 移动到标记a处</p></li>
 <li><p>‘A: 用大写打标记不会因为退出而更改</p></li>
 <li><p>‘’: 两次单引号, 跳转到光标上次所在位置</p></li>
@@ -978,13 +978,27 @@ zhangyuhang
 <section id="id7">
 <h1>小集群<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h1>
 <p>小集群 IP 为: 10.1.20.53</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>账号:<span class="w"> </span>xiaozhou
-密码:<span class="w"> </span>xz2022
+<p>外网请使用 vpn: &lt;<a class="reference external" href="https://159.226.47.20/">https://159.226.47.20/</a>&gt;</p>
+<p>小集群账号:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>team_daiyuhong
 </pre></div>
 </div>
-<p>外网请使用 vpn: &lt;<a class="reference external" href="https://159.226.47.20/">https://159.226.47.20/</a>&gt;</p>
+<p>小集群密码:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dyh@lsec.0621
+</pre></div>
+</div>
+<p>[新] 小集群 VPN 登录方式: <a class="reference external" href="https://amssvpn.amss.ac.cn/">https://amssvpn.amss.ac.cn/</a></p>
+<p>登录时选择登录方式为 “本地密码认证”, 然后输入用户名及密码</p>
+<p>小集群账号:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>team_daiyuhong
-dyh@lsec.0621
+</pre></div>
+</div>
+<p>小集群密码:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Dyh@lsec.0422
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xiaozhou
+xz2022
 
 lvwei
 h#Z79DnjdC

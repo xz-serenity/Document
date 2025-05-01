@@ -114,13 +114,13 @@ C++ 执行命令:
 
 .. code-block:: bash
 
-    ps -aux | grep "suzhaogang"
+    ps -aux | grep ""
 
 杀死所有进程 (大集群)
 
 .. code-block:: bash
 
-    ps -aux | grep "suzhaogang" | awk '$1=="suzhaogang" {print $2}' | xargs kill -9
+    ps -aux | grep "suzhao" | awk '$1=="suzhaog+" {print $2}' | xargs kill -9
 
 杀死所有进程 (小集群)
 
@@ -277,7 +277,7 @@ Vim 命令
 #. Ctrl+r: 重做上一个动作
 #. .: 不要怀疑！这就是小数点！意思是重复前一个动作的意思. 如果你想要重复删除、重复贴上等等动作, 按下小数点就好了
 
-#. ma: 在该行打上标记 a
+#. ma: 在该行打上标记  a
 #. 'a: 移动到标记a处
 #. 'A: 用大写打标记不会因为退出而更改
 #. '': 两次单引号, 跳转到光标上次所在位置
@@ -920,17 +920,40 @@ g++ 或 make 编译不成功:
 
 小集群 IP 为: 10.1.20.53
 
-.. code-block:: bash
-    
-    账号: xiaozhou
-    密码: xz2022
-
 外网请使用 vpn: <https://159.226.47.20/>
+
+小集群账号:
 
 .. code-block:: bash
 
     team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
     dyh@lsec.0621
+
+[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
+
+登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
+
+小集群账号:
+
+.. code-block:: bash
+
+    team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
+    Dyh@lsec.0422
+
+.. code-block:: bash
+    
+    xiaozhou
+    xz2022
 
     lvwei
     h#Z79DnjdC
