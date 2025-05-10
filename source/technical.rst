@@ -996,6 +996,14 @@ CPLEX 执行命令
 设置参数: 
 <https://www.ibm.com/docs/en/icos/12.10.0?topic=s-cpxxsetintparam-cpxsetintparam>
 
+Julia 安装 CPLEX 
+
+.. code-block:: bash 
+
+    ENV["CPLEX_STUDIO_BINARIES"] = "/share/home/suzhaogang/xiaozhou/CPLEX/cplex/bin/x86-64_linux/"
+    import Pkg
+    Pkg.add("CPLEX")
+    Pkg.build("CPLEX")
 
 
 
