@@ -48,20 +48,20 @@ C++ 执行命令:
 .. code-block:: bash
 
     scp -P 10190 ./[file] suzhaogang@10.4.3.17:/share/home/suzhaogang/xiaozhou/
-    rsync -r ./[file] xiaozhou@10.1.20.53:/home/xiaozhou/[directory]  #密码: xz2022
+    rsync -r ./[file] xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory]  #密码: xz2022
 
 复制大集群/小集群文件到本地 (在 *本地* 操作):
 
 .. code-block:: bash
 
     scp -P 10190 suzhaogang@10.4.3.17:/share/home/suzhaogang/xiaozhou/[directory] ./
-    rsync -r xiaozhou@10.1.20.53:/home/xiaozhou/[directory] ./  #密码: xz2022
+    rsync -r xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory] ./  #密码: xz2022
 
 复制大集群文件到小集群 (在 *大集群* 操作):
 
 .. code-block:: bash
 
-    rsync -r ./[file] xiaozhou@10.1.20.53:/home/xiaozhou/[directory]
+    rsync -r ./[file] xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory]
 
 解压文件: 
     
