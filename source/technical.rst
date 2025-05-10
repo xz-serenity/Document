@@ -1000,7 +1000,12 @@ Julia 安装 CPLEX
 
 .. code-block:: bash 
 
+    # version 20.1.0
     ENV["CPLEX_STUDIO_BINARIES"] = "/share/home/suzhaogang/xiaozhou/CPLEX/cplex/bin/x86-64_linux/"
+
+    # version 22.1.0
+    ENV["CPLEX_STUDIO_BINARIES"] = "/share/home/suzhaogang/tools/cplex2210/cplex/bin/x86-64_linux/"
+
     import Pkg
     Pkg.add("CPLEX")
     Pkg.build("CPLEX")
