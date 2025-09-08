@@ -1,3 +1,37 @@
+GPT
+===============================
+
+
+
+GPT 修改语句
+-------------------------------
+
+.. note::
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+
+.. code-block:: bash
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+
+.. note::
+    
+    Rewritten all the sentences. Change the word and order to put each sentence in another way to say. Do not contain any repetition compared to the origin one.
+
+.. code-block:: bash
+
+    Rewritten all the sentences. Change the word and order to put each sentence in another way to say. Do not contain any repetition compared to the origin one.
+
+.. note::
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+.. code-block:: bash
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+
+
 Linux
 ===============================
 

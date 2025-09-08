@@ -1,3 +1,37 @@
+GPT
+===============================
+
+
+
+GPT 修改语句
+-------------------------------
+
+.. note::
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+
+.. code-block:: bash
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+
+.. note::
+    
+    Rewritten all the sentences. Change the word and order to put each sentence in another way to say. Do not contain any repetition compared to the origin one.
+
+.. code-block:: bash
+
+    Rewritten all the sentences. Change the word and order to put each sentence in another way to say. Do not contain any repetition compared to the origin one.
+
+.. note::
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+.. code-block:: bash
+
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+
+
 Linux
 ===============================
 
@@ -48,20 +82,20 @@ C++ 执行命令:
 .. code-block:: bash
 
     scp -P 10190 ./[file] suzhaogang@10.4.3.17:/share/home/suzhaogang/xiaozhou/
-    rsync -r ./[file] xiaozhou@10.1.20.53:/home/xiaozhou/[directory]  #密码: xz2022
+    rsync -r ./[file] xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory]  #密码: xz2022
 
 复制大集群/小集群文件到本地 (在 *本地* 操作):
 
 .. code-block:: bash
 
     scp -P 10190 suzhaogang@10.4.3.17:/share/home/suzhaogang/xiaozhou/[directory] ./
-    rsync -r xiaozhou@10.1.20.53:/home/xiaozhou/[directory] ./  #密码: xz2022
+    rsync -r xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory] ./  #密码: xz2022
 
 复制大集群文件到小集群 (在 *大集群* 操作):
 
 .. code-block:: bash
 
-    rsync -r ./[file] xiaozhou@10.1.20.53:/home/xiaozhou/[directory]
+    rsync -r ./[file] xiaozhou@10.1.20.53:/share/home/xiaozhou/[directory]
 
 解压文件: 
     
@@ -948,7 +982,7 @@ g++ 或 make 编译不成功:
 
 .. code-block:: bash
 
-    Dyh@lsec.0422
+    Dyh@lsec.0722
 
 .. code-block:: bash
     
@@ -996,6 +1030,19 @@ CPLEX 执行命令
 设置参数: 
 <https://www.ibm.com/docs/en/icos/12.10.0?topic=s-cpxxsetintparam-cpxsetintparam>
 
+Julia 安装 CPLEX 
+
+.. code-block:: bash 
+
+    # version 20.1.0
+    ENV["CPLEX_STUDIO_BINARIES"] = "/share/home/suzhaogang/xiaozhou/CPLEX/cplex/bin/x86-64_linux/"
+
+    # version 22.1.0
+    ENV["CPLEX_STUDIO_BINARIES"] = "/share/home/suzhaogang/tools/cplex2210/cplex/bin/x86-64_linux/"
+
+    import Pkg
+    Pkg.add("CPLEX")
+    Pkg.build("CPLEX")
 
 
 
