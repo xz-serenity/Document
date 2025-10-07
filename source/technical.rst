@@ -1578,6 +1578,25 @@ Debug 模式
 Julia
 ===============================
 
+Julia 与 JuMP
+
+.. code-block:: bash
+
+    # julia 官网
+    https://julialang.org
+
+    # JuMP 官网
+    https://jump.dev/JuMP.jl/stable/
+
+    # 在 Linux 上安装 Julia
+    wget https://julialang-s3.julialang.org/bin/linux/x64/1.11/julia-1.11.7-linux-x86_64.tar.gz
+    tar zxvf julia-1.11.7-linux-x86_64.tar.gz
+
+    # 不同操作系统的安装详见:
+    https://julialang.org/downloads/platform/ 
+
+
+
 julia 安装 cplex
 
 .. code-block:: bash
