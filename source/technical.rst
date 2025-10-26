@@ -8,11 +8,11 @@ GPT 修改语句
 
 .. note::
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
 
 .. code-block:: bash
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
 
 .. note::
     
