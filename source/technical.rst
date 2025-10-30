@@ -24,6 +24,14 @@ GPT 修改语句
 
 .. note::
 
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+
+.. code-block:: bash
+
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+
+.. note::
+
     Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
 
 .. code-block:: bash
