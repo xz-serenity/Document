@@ -1012,7 +1012,7 @@ g++ 或 make 编译不成功:
 
 .. code-block:: bash
 
-    Dyh@lsec.0722
+    Dyh@lsec.1022
 
 .. code-block:: bash
     
