@@ -62,6 +62,111 @@ Gemini
 
 
 
+
+
+大集群
+===============================
+
+大集群 IP 为 10.4.3.17
+
+.. code-block:: bash 
+    
+    suzhaogang
+    SuZhaoGang@2021
+
+    ythu
+    yutinghu@1578
+
+    diaoruoyu
+    LyTo&Mjy5J
+
+    zhangyuhang
+    1r0i@1maQV
+
+
+
+湘大集群 IP 为 172.24.128.101
+
+.. code-block:: bash 
+    
+    30150116
+    @Ch19970623
+
+    30150116
+    123456a?
+
+
+
+
+小集群
+===============================
+
+小集群 IP 为: 10.1.20.53
+
+外网请使用 vpn: <https://159.226.47.20/>
+
+小集群账号:
+
+.. code-block:: bash
+
+    team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
+    dyh@lsec.0621
+
+[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
+
+登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
+
+小集群账号:
+
+.. code-block:: bash
+
+    team_daiyuhong
+
+小集群密码:
+
+.. code-block:: bash
+
+    Dyh@lsec.0722
+
+.. code-block:: bash
+    
+    xiaozhou
+    xz2022
+
+    lvwei
+    h#Z79DnjdC
+
+    yuchengyang
+    $8yMgyQ13x
+
+    zhangweiyang
+    $Ioo3Gjwf8
+
+    liuyachen
+    rcTWd9^Se1
+
+小集群配置
+
+.. code-block:: bash
+
+    x86_64 架构
+    具有 52 个 CPU 核心
+    每个核心有 1 个线程
+    Intel Xeon Gold 6230R 处理器
+    主频为 2.10GHz
+    内存为 250 G
+
+
+
+
+
+
+
 Linux
 ===============================
 
@@ -948,111 +1053,6 @@ g++ 或 make 编译不成功:
     chmod 0600 /swapfile
     sudo swapon /swapfile
     # 使用刚才创建的swap空间
-
-
-
-
-
-大集群
-===============================
-
-大集群 IP 为 10.4.3.17
-
-.. code-block:: bash 
-    
-    suzhaogang
-    SuZhaoGang@2021
-
-    ythu
-    yutinghu@1578
-
-    diaoruoyu
-    LyTo&Mjy5J
-
-    zhangyuhang
-    1r0i@1maQV
-
-
-
-湘大集群 IP 为 172.24.128.101
-
-.. code-block:: bash 
-    
-    30150116
-    @Ch19970623
-
-    30150116
-    123456a?
-
-
-
-
-
-
-小集群
-===============================
-
-小集群 IP 为: 10.1.20.53
-
-外网请使用 vpn: <https://159.226.47.20/>
-
-小集群账号:
-
-.. code-block:: bash
-
-    team_daiyuhong
-
-小集群密码:
-
-.. code-block:: bash
-
-    dyh@lsec.0621
-
-[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
-
-登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
-
-小集群账号:
-
-.. code-block:: bash
-
-    team_daiyuhong
-
-小集群密码:
-
-.. code-block:: bash
-
-    Dyh@lsec.0722
-
-.. code-block:: bash
-    
-    xiaozhou
-    xz2022
-
-    lvwei
-    h#Z79DnjdC
-
-    yuchengyang
-    $8yMgyQ13x
-
-    zhangweiyang
-    $Ioo3Gjwf8
-
-    liuyachen
-    rcTWd9^Se1
-
-小集群配置
-
-.. code-block:: bash
-
-    x86_64 架构
-    具有 52 个 CPU 核心
-    每个核心有 1 个线程
-    Intel Xeon Gold 6230R 处理器
-    主频为 2.10GHz
-    内存为 250 G
-
-
 
 
 
