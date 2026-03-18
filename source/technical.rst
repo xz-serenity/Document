@@ -103,21 +103,7 @@ Gemini
 
 小集群 IP 为: 10.1.20.53
 
-外网请使用 vpn: <https://159.226.47.20/>
-
-小集群账号:
-
-.. code-block:: bash
-
-    team_daiyuhong
-
-小集群密码:
-
-.. code-block:: bash
-
-    dyh@lsec.0621
-
-[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
+小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
 
 登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
 
@@ -126,12 +112,14 @@ Gemini
 .. code-block:: bash
 
     team_daiyuhong
-
+    
 小集群密码:
 
 .. code-block:: bash
 
     Dyh@lsec.0722
+
+小集群账号:
 
 .. code-block:: bash
     
