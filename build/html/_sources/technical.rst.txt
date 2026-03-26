@@ -8,11 +8,11 @@ GPT 修改语句
 
 .. note::
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
 
 .. code-block:: bash
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
 
 .. note::
     
@@ -24,11 +24,137 @@ GPT 修改语句
 
 .. note::
 
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+
+.. code-block:: bash
+
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+
+.. note::
+
     Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
 
 .. code-block:: bash
 
     Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+
+
+Gemini
+===============================
+
+.. note::
+
+    详细写出每个步骤和推导，公式中不要有文字描述，要用严格的数学符号定义。不要出现知识性错误。
+
+.. code-block:: bash
+
+    详细写出每个步骤和推导，公式中不要有文字描述，要用严格的数学符号定义。不要出现知识性错误。
+
+.. note::
+
+    结合整数规划知识, 用严格的数学符号定义内容, 使用必要数学公式回答, 不要出现知识性错误, 详细写出每一步推导过程和步骤, 仔细思考后回答以下问题:
+
+.. code-block:: bash
+
+    结合整数规划知识, 用严格的数学符号定义内容, 使用必要数学公式回答, 不要出现知识性错误, 详细写出每一步推导过程和步骤, 仔细思考后回答以下问题:
+
+
+
+
+
+
+大集群
+===============================
+
+大集群 IP 为 10.4.3.17
+
+.. code-block:: bash 
+    
+    suzhaogang
+    SuZhaoGang@2021
+
+    ythu
+    yutinghu@1578
+
+    diaoruoyu
+    LyTo&Mjy5J
+
+    zhangyuhang
+    1r0i@1maQV
+
+
+
+湘大集群 IP 为 172.24.128.101
+
+vpn 访问地址 https://vpn.xtu.edu.cn    https://202.197.228.8    https://218.75.242.251
+
+
+.. code-block:: bash 
+    
+    30150116
+    @Ch19970623
+
+    30150116
+    123456a?
+
+
+
+
+小集群
+===============================
+
+小集群 IP 为: 10.1.20.53
+
+小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
+
+登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
+
+小集群账号:
+
+.. code-block:: bash
+
+    team_daiyuhong
+    
+小集群密码:
+
+.. code-block:: bash
+
+    Dyh@lsec.0722
+
+小集群账号:
+
+.. code-block:: bash
+    
+    xiaozhou
+    xz2022
+
+    lvwei
+    h#Z79DnjdC
+
+    yuchengyang
+    $8yMgyQ13x
+
+    zhangweiyang
+    $Ioo3Gjwf8
+
+    liuyachen
+    rcTWd9^Se1
+
+小集群配置
+
+.. code-block:: bash
+
+    x86_64 架构
+    具有 52 个 CPU 核心
+    每个核心有 1 个线程
+    Intel Xeon Gold 6230R 处理器
+    主频为 2.10GHz
+    内存为 250 G
+
+
+
+
 
 
 
@@ -918,98 +1044,6 @@ g++ 或 make 编译不成功:
     chmod 0600 /swapfile
     sudo swapon /swapfile
     # 使用刚才创建的swap空间
-
-
-
-
-
-大集群
-===============================
-
-大集群 IP 为 10.4.3.17
-
-.. code-block:: bash 
-    
-    suzhaogang
-    SuZhaoGang@2021
-
-    ythu
-    yutinghu@1578
-
-    diaoruoyu
-    LyTo&Mjy5J
-
-    zhangyuhang
-    1r0i@1maQV
-
-
-
-
-
-
-
-
-小集群
-===============================
-
-小集群 IP 为: 10.1.20.53
-
-外网请使用 vpn: <https://159.226.47.20/>
-
-小集群账号:
-
-.. code-block:: bash
-
-    team_daiyuhong
-
-小集群密码:
-
-.. code-block:: bash
-
-    dyh@lsec.0621
-
-[新] 小集群 VPN 登录方式: https://amssvpn.amss.ac.cn/
-
-登录时选择登录方式为 "本地密码认证", 然后输入用户名及密码
-
-小集群账号:
-
-.. code-block:: bash
-
-    team_daiyuhong
-
-小集群密码:
-
-.. code-block:: bash
-
-    Dyh@lsec.0722
-
-.. code-block:: bash
-    
-    xiaozhou
-    xz2022
-
-    lvwei
-    h#Z79DnjdC
-
-    yuchengyang
-    $8yMgyQ13x
-
-    liuyachen
-    rcTWd9^Se1
-
-小集群配置
-
-.. code-block:: bash
-
-    x86_64 架构
-    具有 52 个 CPU 核心
-    每个核心有 1 个线程
-    Intel Xeon Gold 6230R 处理器
-    主频为 2.10GHz
-    内存为 250 G
-
-
 
 
 
