@@ -87,15 +87,22 @@ Gemini
 
 湘大集群 IP 为 172.24.128.101
 
+
 vpn 访问地址 https://vpn.xtu.edu.cn   
 
 备用地址 https://202.197.228.8  或者  https://218.75.242.251
 
+vpn 登录账号密码:
 
 .. code-block:: bash 
     
     30150116
     @Ch19970623
+
+
+集群账号密码:
+
+.. code-block:: bash 
 
     30150116
     123456a?
