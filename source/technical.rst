@@ -8,11 +8,12 @@ GPT 修改语句
 
 .. note::
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. Do not change the latex format and equation environment format. 
+
 
 .. code-block:: bash
 
-    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences.
+    Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. Do not change the latex format and equation environment format.
 
 .. note::
     
@@ -24,11 +25,11 @@ GPT 修改语句
 
 .. note::
 
-    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s). Do not change the latex format and equation environment format.
 
 .. code-block:: bash
 
-    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s).
+    Make the sentences more logical and smooth. Appropriately add some transitional sentences. Better to conclude some long sentences into one or two sentence(s). Do not change the latex format and equation environment format.
 
 .. note::
 
@@ -37,6 +38,14 @@ GPT 修改语句
 .. code-block:: bash
 
     Please carefully check the spell and grammar, tell me all the mistakes and issues and give a detailed analysis of how to fix them. Do not alter the sentence order or unnecessarily rephrase.
+
+.. note::
+
+    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph. If you understand, please reply: yes, let's get started.
+
+.. code-block:: bash
+
+    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph. If you understand, please reply: yes, let's get started.
 
 
 .. note::
