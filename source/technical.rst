@@ -41,12 +41,11 @@ GPT 修改语句
 
 .. note::
 
-    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph. 
+    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? First, search online articles (e.g. google scholar or journals about operations research and integer programming) and find the relevant paragraphs analogy to the paragraphs that I provide. Second, according to these articles, refine the paragraphs to the similar styles of these articles, including sentence syntax, word group, phrases, etc. I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph.
 
 .. code-block:: bash
 
-    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph.
-
+    I am preparing my SCI paper for submission and require assistance in polishing each paragraph. Could you please refine my writing for academic rigor? First, search online articles (e.g. google scholar or journals about operations research and integer programming) and find the relevant paragraphs analogy to the paragraphs that I provide. Second, according to these articles, refine the paragraphs to the similar styles of these articles, including sentence syntax, word group, phrases, etc. I need you to correct any grammatical errors, improve sentence structure for academic suitability, and make the text more formal where necessary. Make the sentences more logical and smooth if necessary. Appropriately add some transitional sentences. For each paragraph we need to improve, you need to put all modified sentences in a Markdown table, each column contains the following: Full original sentence; Highlight the revised part of the sentence; Explain why made these changes. Finally, Rewrite the full, corrected paragraph.
 
 .. note::
 
@@ -169,6 +168,9 @@ vpn 登录账号密码:
 
     lvwei
     h#Z79DnjdC
+
+    wuzefeng
+    KMhH2DtAtcuS2MPdsyE8
 
     yuchengyang
     $8yMgyQ13x
