@@ -123,7 +123,7 @@ vpn 访问地址 https://vpn.xtu.edu.cn
 
 .. code-block:: bash 
     
-    电脑锁屏密码为: 2026
+    电脑锁屏密码为: 0623
     远程连接软件为: ToDesk
     ToDesk 设备代码: 516619315
     ToDesk 连接密码: @Aa20260506
@@ -1778,3 +1778,26 @@ MySQL
 - 执行导入: 点击右下角的 *Start Import* 按钮, MySQL Workbench 会开始导入 paparams.sql 文件中的数据
 
 - 验证导入是否成功: 导入完成后, 您可以刷新 *SCHEMAS* 面板, 然后展开 my_database, 查看导入的表和数据是否正确
+
+
+
+
+
+
+
+
+
+COAP 
+===============================
+
+投稿注意事项:
+
+- revision 的版本需要上传所有源文件, 包括 tex, eps, bib, cls, bst 
+
+- response_letter.pdf 要放在最前面
+
+- 所有 tex 文件类型都为 Manuscript, 且 Main.tex 要放在第一位
+
+- tex 的文件不要出现 highlights (即红色字体)
+
+- Main.pdf 作为 supplement materials 放在最后 (上传 highlights 版本)
